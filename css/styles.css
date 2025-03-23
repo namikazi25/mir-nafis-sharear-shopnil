@@ -372,6 +372,27 @@ nav a:hover {
     margin-left: 5px;
 }
 
+/* Email Command Styling */
+.email-command {
+    display: block;
+    color: var(--terminal-command);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.email-command:hover {
+    background-color: var(--secondary-color);
+}
+
+.command-prompt {
+    color: var(--terminal-command);
+}
+
 @keyframes blink {
     0%, 100% {
         opacity: 1;
