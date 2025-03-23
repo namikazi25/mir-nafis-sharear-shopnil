@@ -1,0 +1,400 @@
+/* Base Styles */
+:root {
+    --bg-color: #0d1117;
+    --text-color: #e6edf3;
+    --accent-color: #58a6ff;
+    --secondary-color: #30363d;
+    --terminal-bg: #0d1117;
+    --terminal-header: #161b22;
+    --terminal-text: #e6edf3;
+    --terminal-command: #58a6ff;
+    --terminal-output: #8b949e;
+    --red: #f85149;
+    --yellow: #f0883e;
+    --green: #56d364;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    padding: 60px 0 30px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Glitch effect for name */
+.glitch {
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    color: var(--text-color);
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    color: var(--accent-color);
+    z-index: -1;
+    animation: glitch-effect 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    animation-delay: 0.1s;
+}
+
+.glitch::after {
+    color: var(--red);
+    z-index: -2;
+    animation: glitch-effect 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    animation-delay: 0.2s;
+}
+
+@keyframes glitch-effect {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 0;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+/* Terminal Styling */
+.terminal {
+    background-color: var(--terminal-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    border: 1px solid var(--secondary-color);
+}
+
+.terminal-header {
+    background-color: var(--terminal-header);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 15px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-button.red {
+    background-color: var(--red);
+}
+
+.terminal-button.yellow {
+    background-color: var(--yellow);
+}
+
+.terminal-button.green {
+    background-color: var(--green);
+}
+
+.terminal-title {
+    font-size: 0.9rem;
+    color: var(--terminal-text);
+}
+
+.terminal-content {
+    padding: 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+.command {
+    color: var(--terminal-command);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.command::before {
+    content: '> ';
+}
+
+.output {
+    color: var(--terminal-output);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Education Section */
+.education-item {
+    margin-bottom: 30px;
+}
+
+.education-item h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.location, .degree, .date, .grade, .honors {
+    margin-bottom: 5px;
+}
+
+/* Experience Section */
+.experience-item, .research-item {
+    margin-bottom: 30px;
+}
+
+.experience-item h3, .research-item h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.company, .institution, .date, .location, .project {
+    margin-bottom: 5px;
+}
+
+.responsibilities, .achievements {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.responsibilities li, .achievements li {
+    margin-bottom: 8px;
+}
+
+/* Projects Section */
+.project-item {
+    margin-bottom: 30px;
+}
+
+.project-item h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.project-details {
+    padding-left: 20px;
+}
+
+.project-details li {
+    margin-bottom: 8px;
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.skill-category h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 5px;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Publications Section */
+.publication-item {
+    margin-bottom: 30px;
+}
+
+.publication-item h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.authors, .journal, .doi {
+    margin-bottom: 8px;
+}
+
+.abstract {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 2rem;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Cursor Blink Effect */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: var(--accent-color);
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
