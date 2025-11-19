@@ -1,127 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Mir Nafis Sharear Shopnil</title>
     <link rel="icon" type="image/png" href="assets/IMG_1635.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <nav>
-        <div class="nav-container">
-            <a href="index.html">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="cv.html" class="active">CV</a>
+        <div class="container nav-wrapper">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html" class="active">CV</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         </div>
     </nav>
 
     <main>
         <div class="container">
-            <h1>Curriculum Vitae</h1>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; margin-bottom: 20px;">
+                <h1 style="margin: 0;">Curriculum Vitae</h1>
+                <a href="assets/Mir_N_S_Shopnil_Academic_CV.pdf" target="_blank" class="badge" style="font-size: 14px; padding: 8px 15px; text-decoration: none; border-color: var(--accent); color: var(--accent);">
+                    📄 Download PDF
+                </a>
+            </div>
 
-            <p><a href="assets/Mir_N_S_Shopnil_Academic_CV.pdf" target="_blank">Download PDF version</a></p>
-
+            <!-- EDUCATION -->
             <section>
                 <h2>Education</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3 style="margin-bottom: 5px;">MSc in Artificial Intelligence</h3>
+                        <p style="color: var(--accent); font-weight: 500;">Queen Mary University of London</p>
+                        <p class="date" style="color: var(--text-muted); font-size: 0.9rem;">Sep 2022 - Sep 2023</p>
+                        <p style="margin-top: 10px; font-size: 0.95rem;"><strong>Merit (2:1)</strong></p>
+                    </div>
 
-                <div class="cv-entry">
-                    <p class="cv-title">MSc in Artificial Intelligence</p>
-                    <p class="cv-org">Queen Mary University of London, London, UK</p>
-                    <p class="cv-date">September 2022 - September 2023</p>
-                    <p class="cv-detail">Merit (2:1)</p>
-                </div>
-
-                <div class="cv-entry">
-                    <p class="cv-title">BSc in Computer Science</p>
-                    <p class="cv-org">BRAC University, Dhaka, Bangladesh</p>
-                    <p class="cv-date">January 2017 - October 2021</p>
-                    <p class="cv-detail">CGPA 3.45 | VC's List (Summer 2020, Fall 2020) | Dean's List (2017)</p>
+                    <div class="card">
+                        <h3 style="margin-bottom: 5px;">BSc in Computer Science</h3>
+                        <p style="color: var(--accent); font-weight: 500;">BRAC University</p>
+                        <p class="date" style="color: var(--text-muted); font-size: 0.9rem;">Jan 2017 - Oct 2021</p>
+                        <p style="margin-top: 10px; font-size: 0.95rem;"><strong>CGPA 3.45</strong> | VC's List & Dean's List</p>
+                    </div>
                 </div>
             </section>
 
+            <!-- RESEARCH EXPERIENCE -->
             <section>
                 <h2>Research Experience</h2>
-
-                <div class="cv-entry">
-                    <p class="cv-title">Research Fellow</p>
-                    <p class="cv-org">Fatima Fellowship</p>
-                    <p class="cv-date">September 2024 - Present</p>
-                    <ul>
-                        <li>Designed agentic multimodal misinformation detection pipeline orchestrating LVLMs with web and reverse-image search to build verifiable evidence graphs</li>
-                        <li>Formalized evidence and claim graph representations; co-led development of cross-graph attention GNN for image-text consistency scoring</li>
-                        <li>Led experimental design, ablations, robustness checks, and error analyses</li>
-                        <li>Achieved 93.05% accuracy on evaluation set, outperforming best LLM baseline by 2.82 percentage points</li>
+                
+                <div class="card" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                        <h3 style="margin-bottom: 5px;">Research Fellow</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">Sep 2024 - Present</span>
+                    </div>
+                    <p style="color: var(--accent); font-weight: 500; margin-bottom: 15px;">Fatima Fellowship</p>
+                    <ul style="margin-left: 20px; color: var(--text-main);">
+                        <li>Designed <strong>MIRAGE</strong>, an agentic multimodal misinformation detection pipeline orchestrating LVLMs with web search tools.</li>
+                        <li>Co-led development of cross-graph attention GNNs for image-text consistency scoring.</li>
+                        <li>Achieved <strong>93.05% accuracy</strong> on evaluation set, outperforming best LLM baseline by 2.82%.</li>
                     </ul>
+                    <div style="margin-top: 15px;">
+                        <span class="badge">GNN</span>
+                        <span class="badge">LVLM</span>
+                        <span class="badge">Agentic AI</span>
+                    </div>
                 </div>
             </section>
 
+            <!-- PROFESSIONAL EXPERIENCE -->
             <section>
                 <h2>Professional Experience</h2>
 
-                <div class="cv-entry">
-                    <p class="cv-title">AI Engineer</p>
-                    <p class="cv-org">Technovative Solutions Ltd., Manchester, UK</p>
-                    <p class="cv-date">August 2025 - Present</p>
-                    <ul>
-                        <li>Lead architect for agentic AI across EU programmes (CLIMATEAdaptEOSC, EcoPlast)</li>
-                        <li>Technical leadership: mentor and manage team of 10 junior engineers; set research roadmaps</li>
-                        <li>Implemented self-supervised vision backbone (SimCLR) and operationalized Prithvi EO model for geospatial workflows</li>
-                        <li>Developed hyperspectral classifiers and physics-informed neural networks for circular economy applications</li>
-                        <li>Fine-tuned and deployed foundation models as containerized services with CI/CD and monitoring</li>
+                <div class="card" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                        <h3 style="margin-bottom: 5px;">AI Engineer (Lead Architect)</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">Aug 2025 - Present</span>
+                    </div>
+                    <p style="color: var(--accent); font-weight: 500; margin-bottom: 15px;">Technovative Solutions Ltd., Manchester</p>
+                    <ul style="margin-left: 20px; color: var(--text-main);">
+                        <li>Leading agentic AI architecture for EU programmes (CLIMATEAdaptEOSC, EcoPlast).</li>
+                        <li>Mentoring a team of 10 junior engineers and setting research roadmaps.</li>
+                        <li>Operationalized <strong>Prithvi EO model</strong> for geospatial workflows and self-supervised vision backbones (SimCLR).</li>
+                        <li>Deployed foundation models as containerized services with CI/CD.</li>
                     </ul>
+                    <div style="margin-top: 15px;">
+                        <span class="badge">Architecture</span>
+                        <span class="badge">Geospatial AI</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">CI/CD</span>
+                    </div>
                 </div>
 
-                <div class="cv-entry">
-                    <p class="cv-title">Data Scientist</p>
-                    <p class="cv-org">Faculty AI, London, UK</p>
-                    <p class="cv-date">May 2024 - July 2024</p>
-                    <ul>
-                        <li>Delivered production ML services for supply chain reliability prediction and manufacturing date forecasting</li>
-                        <li>Built end-to-end pipelines with XGBoost, LightGBM, and Bayesian Ridge models</li>
-                        <li>Deployed as FastAPI microservices with monitoring, version tracking, and failsafe mechanisms</li>
+                <div class="card" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                        <h3 style="margin-bottom: 5px;">Data Scientist</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">May 2024 - July 2024</span>
+                    </div>
+                    <p style="color: var(--accent); font-weight: 500; margin-bottom: 15px;">Faculty AI, London</p>
+                    <ul style="margin-left: 20px; color: var(--text-main);">
+                        <li>Delivered production ML services for supply chain reliability prediction.</li>
+                        <li>Built end-to-end pipelines with XGBoost and LightGBM.</li>
+                        <li>Deployed <strong>FastAPI microservices</strong> with monitoring and failsafe mechanisms.</li>
                     </ul>
+                    <div style="margin-top: 15px;">
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">XGBoost</span>
+                        <span class="badge">MLOps</span>
+                    </div>
                 </div>
             </section>
 
+            <!-- SKILLS (Visual Upgrade) -->
             <section>
-                <h2>Skills</h2>
+                <h2>Technical Skills</h2>
+                <div class="card">
+                    <p style="margin-bottom: 10px;"><strong>Languages & Core:</strong></p>
+                    <div style="margin-bottom: 20px;">
+                        <span class="badge">Python</span>
+                        <span class="badge">PyTorch</span>
+                        <span class="badge">NumPy</span>
+                        <span class="badge">Pandas</span>
+                        <span class="badge">C++</span>
+                        <span class="badge">SQL</span>
+                    </div>
 
-                <div class="skills-section">
-                    <p><strong>Programming:</strong> Python (PyTorch, NumPy, pandas), C++, SQL</p>
-                    
-                    <p><strong>LLMs & Agentic Systems:</strong> Prompting, evaluation, RAG, fine-tuning (LoRA, RLHF/GRPO), multimodal models, agentic workflows, Hugging Face Transformers, LangChain</p>
-                    
-                    <p><strong>Graphs & Networks:</strong> Graph ML (GCN/GAT, link prediction), PyTorch Geometric, NetworkX</p>
-                    
-                    <p><strong>RL & Agent-Based Modeling:</strong> Policy and value methods, bandits, Gymnasium/RLlib, Mesa, agentpy</p>
-                    
-                    <p><strong>ML/DL:</strong> Supervised/unsupervised learning, representation learning (SimCLR), XGBoost, LightGBM, scikit-learn</p>
-                    
-                    <p><strong>MLOps & Deployment:</strong> Docker, CI/CD, FastAPI, GPU computing, experiment tracking (W&B/MLflow)</p>
-                    
-                    <p><strong>Data & Cloud:</strong> PostgreSQL, MySQL, ChromaDB, AWS (EC2, S3), GCP (Compute Engine, Vertex AI), Azure</p>
+                    <p style="margin-bottom: 10px;"><strong>LLMs & Agents:</strong></p>
+                    <div style="margin-bottom: 20px;">
+                        <span class="badge">RAG</span>
+                        <span class="badge">LangChain</span>
+                        <span class="badge">LoRA/QLoRA</span>
+                        <span class="badge">RLHF/GRPO</span>
+                        <span class="badge">Hugging Face</span>
+                    </div>
+
+                    <p style="margin-bottom: 10px;"><strong>Machine Learning:</strong></p>
+                    <div style="margin-bottom: 20px;">
+                        <span class="badge">Graph Neural Networks</span>
+                        <span class="badge">PyG</span>
+                        <span class="badge">Reinforcement Learning</span>
+                        <span class="badge">SimCLR</span>
+                        <span class="badge">XGBoost</span>
+                    </div>
+
+                    <p style="margin-bottom: 10px;"><strong>MLOps & Cloud:</strong></p>
+                    <div>
+                        <span class="badge">Docker</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">AWS (EC2/S3)</span>
+                        <span class="badge">GCP Vertex AI</span>
+                        <span class="badge">W&B</span>
+                    </div>
                 </div>
             </section>
 
-            <section>
-                <h2>Publications</h2>
-                <p>See <a href="publications.html">Publications page</a> for full list.</p>
-            </section>
-
-            <section>
+            <!-- CONTACT -->
+            <section style="margin-bottom: 60px;">
                 <h2>Contact</h2>
                 <p>Email: <a href="mailto:sharears4077@gmail.com">sharears4077@gmail.com</a></p>
                 <p>Phone: +44 7308 009 046</p>
                 <p>Location: Manchester, UK</p>
             </section>
+
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>Last updated: September 2025</p>
+            <p>© 2025 Mir Nafis Sharear Shopnil</p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
