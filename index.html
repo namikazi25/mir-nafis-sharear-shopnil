@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mir Nafis Sharear Shopnil</title>
+    <title>Mir Nafis Sharear Shopnil | AI Researcher</title>
     <link rel="icon" type="image/png" href="assets/IMG_1635.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <nav>
-        <div class="nav-container">
-            <a href="index.html" class="active">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="cv.html">CV</a>
+        <div class="container nav-wrapper">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html">CV</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         </div>
     </nav>
 
     <main>
         <div class="container">
+            
             <header class="profile">
                 <div class="profile-wrapper">
                     <img src="assets/IMG_1635.png" alt="Mir Nafis Sharear Shopnil" class="profile-photo">
                     <div class="profile-content">
                         <h1>Mir Nafis Sharear Shopnil</h1>
-                        <p class="title">AI Engineer | Research Fellow</p>
-                        <p class="affiliation">Technovative Solutions Ltd & Fatima Fellowship</p>
-                        <p class="location">Manchester, UK</p>
+                        <p class="role">AI Engineer & Research Fellow</p>
+                        <p class="affiliation">Technovative Solutions Ltd • Fatima Fellowship</p>
                         
-                        <div class="links">
-                            <a href="mailto:sharears4077@gmail.com">Email</a> /
-                            <a href="https://scholar.google.com/citations?user=pZ70qSoAAAAJ&hl=en" target="_blank">Google Scholar</a> /
-                            <a href="https://github.com/namikazi25" target="_blank">GitHub</a> /
-                            <a href="https://www.linkedin.com/in/mirnafissharearshopnil/" target="_blank">LinkedIn</a> /
-                            <a href="assets/Mir_N_S_Shopnil_Academic_CV.pdf" target="_blank">CV</a>
+                        <div class="links" style="margin-top: 15px;">
+                            <a href="mailto:sharears4077@gmail.com">Email</a> •
+                            <a href="https://scholar.google.com/citations?user=pZ70qSoAAAAJ&hl=en" target="_blank">Scholar</a> •
+                            <a href="https://github.com/namikazi25" target="_blank">GitHub</a> •
+                            <a href="https://www.linkedin.com/in/mirnafissharearshopnil/" target="_blank">LinkedIn</a>
                         </div>
                     </div>
                 </div>
@@ -41,124 +49,95 @@
             <section>
                 <h2>About</h2>
                 <p>
-                    I am an AI researcher and engineer interested in understanding how models coordinate, reason, and make decisions. My work involves building multi-agent systems with large language models, developing interpretable AI architectures, and training foundation models for real-world applications.
+                    I am an AI researcher bridging the gap between <strong>Multi-Agent Systems</strong>, <strong>Large Language Models</strong>, and real-world reliability.
                 </p>
                 <p>
-                    I explore how AI systems can exhibit emergent coordination, how we can interpret the mechanisms behind model reasoning, and how reinforcement learning can incorporate bounded rationality and human-like decision making. My recent projects include agentic misinformation detection systems using graph neural networks and LLM orchestration for climate adaptation workflows.
+                    Currently, I work as an AI Engineer at Technovative Solutions, architecting agentic workflows for climate adaptation, and as a Research Fellow at Fatima Fellowship, developing verifiable misinformation detection pipelines.
                 </p>
-                <p>
-                    I hold an MSc in Artificial Intelligence from Queen Mary University of London and a BSc in Computer Science from BRAC University. I currently work as an AI Engineer at Technovative Solutions and Research Fellow with the Fatima Fellowship.
-                </p>
+                <div style="margin-top: 15px;">
+                    <span class="badge">Python</span>
+                    <span class="badge">PyTorch</span>
+                    <span class="badge">LangChain</span>
+                    <span class="badge">GNNs</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">AWS</span>
+                </div>
             </section>
 
             <section>
-                <h2>Research Interests</h2>
-                <ul>
-                    <li>Multi-agent systems and collective intelligence in LLMs</li>
-                    <li>Reinforcement learning with cognitive constraints and bounded rationality</li>
-                    <li>Mechanistic interpretability and understanding model reasoning processes</li>
-                    <li>Graph-based representations for relational and structured reasoning</li>
-                    <li>Training foundation models for reliable real-world deployment</li>
+                <h2>Research Focus</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>🤖 Agentic AI</h3>
+                        <p>Orchestrating LLMs to solve complex, multi-step reasoning tasks with tool use.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🕵️ Misinformation</h3>
+                        <p>Building multimodal verification pipelines using verifiable evidence graphs.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🕸 Graph Learning</h3>
+                        <p>Utilizing GCNs/GATs for structured reasoning and link prediction.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🧠 Interpretability</h3>
+                        <p>Demystifying model decisions through mechanistic analysis and rationales.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Selected Works</h2>
+                
+                <div class="pub-card">
+                    <h3 class="pub-title">MIRAGE: Agentic Framework for Misinformation Detection</h3>
+                    <p class="pub-venue">Under Review @ ACM WebConf 2026</p>
+                    <p class="pub-desc">A pipeline orchestrating LVLMs with web-search to build verifiable evidence graphs.</p>
+                    <div class="pub-links" style="margin-top: 10px;">
+                        <span class="badge">Agentic AI</span>
+                        <span class="badge">Multimodal</span>
+                        <a href="https://arxiv.org/abs/2510.17590" target="_blank" style="font-weight:bold;">Read Paper →</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <h3 class="pub-title">Evidence-Grounded Multimodal Detection with GNNs</h3>
+                    <p class="pub-venue">Under Review @ ACL ARR 2025</p>
+                    <p class="pub-desc">Cross-graph attention networks for image-text consistency scoring. (93.05% Accuracy)</p>
+                    <div class="pub-links" style="margin-top: 10px;">
+                        <span class="badge">GNN</span>
+                        <span class="badge">Computer Vision</span>
+                        <a href="https://arxiv.org/abs/2505.18221" target="_blank" style="font-weight:bold;">Read Paper →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Updates</h2>
+                <ul class="news-list" style="list-style: none;">
+                    <li style="margin-bottom: 10px;">
+                        <span class="badge" style="background:var(--border)">Oct 2025</span> 
+                        Submitted MIRAGE framework to ACM WebConf.
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <span class="badge" style="background:var(--border)">Aug 2025</span> 
+                        Joined Technovative Solutions as AI Engineer (Lead Architect).
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <span class="badge" style="background:var(--border)">Sep 2024</span> 
+                        Selected as Research Fellow at Fatima Fellowship.
+                    </li>
                 </ul>
-            </section>
-
-            <section>
-                <h2>News</h2>
-                <ul class="news-list">
-                    <li><span class="date">Oct 2025</span> Paper on agentic framework for misinformation detection with rationale generation submitted to ACM Web Conference 2026</li>
-                    <li><span class="date">May 2025</span> Paper on evidence-grounded multimodal misinformation detection submitted to ACL ARR</li>
-                    <li><span class="date">Aug 2025</span> Started as AI Engineer at Technovative Solutions Ltd, leading agentic AI for EU climate projects</li>
-                    <li><span class="date">Sep 2024</span> Joined Fatima Fellowship as Reseacher to work on agentic misinformation detection framework</li>
-                    <li><span class="date">Sep 2023</span> Completed MSc in Artificial Intelligence at Queen Mary University of London</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Selected Publications</h2>
-                
-                <div class="publication">
-                    <p class="pub-title">MIRAGE: Agentic Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning</p>
-                    <p class="pub-authors">M. N. Sharear Shopnil, S. Duwal, A. Tyagi, A. M. Proma</p>
-                    <p class="pub-venue">arXiv2510.17590:, Under review at ACM Web Conference, 2026</p>
-                    <p class="pub-links"><a href="https://arxiv.org/abs/2510.17590" target="_blank">[arXiv]</a></p>
-                </div>
-
-                <div class="publication">
-                    <p class="pub-title">Evidence-Grounded Multimodal Misinformation Detection with Attention-Based GNNs</p>
-                    <p class="pub-authors">S. Duwal, M. N. Sharear Shopnil, A. Tyagi, A. M. Proma</p>
-                    <p class="pub-venue">arXiv:2505.18221, Under review at ACL ARR, 2025</p>
-                    <p class="pub-links"><a href="https://arxiv.org/abs/2505.18221" target="_blank">[arXiv]</a></p>
-                </div>
-
-                <div class="publication">
-                    <p class="pub-title">Demystifying Black-box Learning Models of Rumor Detection from Social Media Posts</p>
-                    <p class="pub-authors">F. Tafannum, M. N. Sharear Shopnil, A. Salsabil, N. Ahmed, M. G. Rabiul Alam, M. T. Reza</p>
-                    <p class="pub-venue">IEEE UEMCON, 2021</p>
-                    <p class="pub-links"><a href="https://doi.org/10.1109/UEMCON53757.2021.9666567" target="_blank">[DOI]</a></p>
-                </div>
-
-                <p><a href="publications.html">View all publications →</a></p>
-            </section>
-
-            <section>
-                <h2>Writing</h2>
-                
-                <div class="publication">
-                    <p class="pub-title">You're Not a Fraud: Beating Imposter Syndrome in the Age of Vibe Coding</p>
-                    <p class="pub-venue">Medium, 2024</p>
-                    <p class="pub-links"><a href="https://medium.com/@shopnil/youre-not-a-fraud-beating-imposter-syndrome-in-the-age-of-vibe-coding-501f8faa56bc" target="_blank">[Read on Medium]</a></p>
-                </div>
-
-                <div class="publication">
-                    <p class="pub-title">Understanding Causal Model Induction in Neural Networks for Interpretability</p>
-                    <p class="pub-venue">Medium, 2024</p>
-                    <p class="pub-links"><a href="https://medium.com/@shopnil/understanding-causal-model-induction-in-neural-networks-for-interpretability-480daa76c446" target="_blank">[Read on Medium]</a></p>
-                </div>
-            </section>
-
-            <section>
-                <h2>Experience</h2>
-                
-                <div class="experience">
-                    <p class="exp-title">AI Engineer</p>
-                    <p class="exp-org">Technovative Solutions Ltd., Manchester, UK</p>
-                    <p class="exp-date">August 2025 - Present</p>
-                    <p class="exp-desc">
-                        Lead architect for agentic AI across EU climate adaptation and circular economy programmes. Managing team of 10 engineers. Designing planner-retriever-tool-use-evaluator loops integrating LLM components with geospatial data pipelines.
-                    </p>
-                </div>
-
-                <div class="experience">
-                    <p class="exp-title">Research Fellow</p>
-                    <p class="exp-org">Fatima Fellowship</p>
-                    <p class="exp-date">September 2024 - Present</p>
-                    <p class="exp-desc">
-                        Designed agentic multimodal misinformation detection pipeline orchestrating large vision-language models with web and reverse-image search. Achieved 93.05% accuracy on evaluation set.
-                    </p>
-                </div>
-
-                <div class="experience">
-                    <p class="exp-title">Data Scientist</p>
-                    <p class="exp-org">Faculty AI, London, UK</p>
-                    <p class="exp-date">May 2024 - July 2024</p>
-                    <p class="exp-desc">
-                        Built production ML services for supply chain reliability prediction and manufacturing date forecasting. Deployed as FastAPI microservices with monitoring and version tracking.
-                    </p>
-                </div>
             </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>Last updated: September 2025</p>
+            <p>© 2025 Mir Nafis Sharear Shopnil. <br>Built with simple HTML/CSS/JS.</p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
-
 </html>
-
-
-
-
-
