@@ -1,0 +1,101 @@
+---
+import { SITE, NAV } from '../config';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description = SITE.description, ogImage } = Astro.props;
+const pageTitle = title ? `${title} — ${SITE.title}` : `${SITE.title} — AI Researcher`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site)} />}
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231e4d3a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='18' fill='white' font-style='italic'%3EM%3C/text%3E%3C/svg%3E" />
+
+  <!-- RSS auto-discovery -->
+  <link rel="alternate" type="application/rss+xml" title={`${SITE.title} — Blog`} href={new URL('/rss.xml', Astro.site)} />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Theme preference before paint (no flash) -->
+  <script is:inline>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
+
+  <slot name="head" />
+</head>
+<body>
+  <nav class="top">
+    <div class="shell row">
+      <a class="brand" href="/">{SITE.title}</a>
+      <div class="links">
+        {NAV.map((item) => (
+          <a
+            href={item.href}
+            class:list={[{ active: Astro.url.pathname === item.href }]}
+          >
+            {item.label}
+          </a>
+        ))}
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">◐</button>
+      </div>
+    </div>
+  </nav>
+
+  <slot />
+
+  <footer class="site">
+    <div class="shell row">
+      <span>© {new Date().getFullYear()} {SITE.author}</span>
+      <span>Built with Astro · {SITE.location}</span>
+    </div>
+  </footer>
+
+  <script>
+    // theme toggle
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      const root = document.documentElement;
+      const set = (t: string) => {
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+        btn.textContent = t === 'dark' ? '◑' : '◐';
+      };
+      btn.textContent = root.getAttribute('data-theme') === 'dark' ? '◑' : '◐';
+      btn.addEventListener('click', () => {
+        set(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const isDev = import.meta.env.DEV;
+  const all = await getCollection('posts', ({ data }) => isDev || !data.draft);
+  const sorted = all.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+  return sorted.map((post, i) => {
+    const next = sorted[i - 1] ?? null; // newer post
+    const prev = sorted[i + 1] ?? null; // older post
+    return {
+      params: { slug: post.slug },
+      props: {
+        post,
+        prev: prev ? { slug: prev.slug, title: prev.data.title } : null,
+        next: next ? { slug: next.slug, title: next.data.title } : null,
+      },
+    };
+  });
+}
+
+type Props = {
+  post: CollectionEntry<'posts'>;
+  prev: { slug: string; title: string } | null;
+  next: { slug: string; title: string } | null;
+};
+
+const { post, prev, next } = Astro.props as Props;
+const { Content } = await post.render();
+---
+
+<PostLayout
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
+  cover={post.data.cover}
+  coverAlt={post.data.coverAlt}
+  prev={prev}
+  next={next}
+>
+  <Content />
+</PostLayout>
