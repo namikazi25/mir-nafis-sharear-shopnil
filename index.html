@@ -1,143 +1,1472 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mir Nafis Sharear Shopnil | AI Researcher</title>
-    <link rel="icon" type="image/png" href="assets/IMG_1635.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mir Nafis Sharear Shopnil — AI Researcher</title>
+<meta name="description" content="AI researcher working on LLM reasoning, mechanistic interpretability, and agentic systems. Applying for PhD positions (Fall 2026)." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231e4d3a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='18' fill='white' font-style='italic'%3EM%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     TWEAKABLE DEFAULTS
+     ============================================================ */
+</style>
+<script>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "forest",
+    "fontPair": "crimson-source",
+    "theme": "light",
+    "heroLayout": "photo-left",
+    "density": "airy",
+    "show_research": true,
+    "show_projects": true,
+    "show_writing": true,
+    "show_teaching": true,
+    "show_cv_snapshot": true
+  }/*EDITMODE-END*/;
+</script>
+
+<style>
+  /* ============================================================
+     TOKENS
+     ============================================================ */
+  :root {
+    /* accents (forest default) */
+    --accent: #1e4d3a;
+    --accent-soft: #2a6a51;
+    --accent-tint: #eef3ef;
+
+    /* neutrals (warm off-white) */
+    --bg:    #f4f4f2;
+    --surface: #fbfbf9;
+    --ink:    #1a1a1a;
+    --ink-2:  #3a3a38;
+    --muted:  #6a6a66;
+    --rule:   #d9d8d2;
+    --rule-2: #e7e6e1;
+
+    /* type */
+    --serif: 'Crimson Pro', 'Iowan Old Style', 'Palatino', Georgia, serif;
+    --sans:  'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* rhythm (airy default) */
+    --step: 1rem;
+    --section-pad: 6rem;
+    --line: 1.65;
+    --measure: 62ch;
+
+    /* ui */
+    --radius: 2px;
+  }
+
+  /* accent variations */
+  [data-accent="forest"]   { --accent:#1e4d3a; --accent-soft:#2a6a51; --accent-tint:#eef3ef; }
+  [data-accent="crimson"]  { --accent:#8b1a1a; --accent-soft:#a63434; --accent-tint:#f6ecec; }
+  [data-accent="navy"]     { --accent:#2a3f5f; --accent-soft:#3e5985; --accent-tint:#ecefe9; }
+  [data-accent="rust"]     { --accent:#b54816; --accent-soft:#d0622d; --accent-tint:#f7eee6; }
+  [data-accent="ink"]      { --accent:#1a1a1a; --accent-soft:#3a3a38; --accent-tint:#ececea; }
+
+  /* font pairings */
+  [data-font="crimson-source"] { --serif:'Crimson Pro', Georgia, serif; --sans:'Source Sans 3', sans-serif; }
+  [data-font="fraunces-inter"] { --serif:'Fraunces', Georgia, serif; --sans:'Inter', sans-serif; }
+  [data-font="serif-only"]     { --serif:'Crimson Pro', Georgia, serif; --sans:'Crimson Pro', Georgia, serif; }
+  [data-font="sans-only"]      { --serif:'Inter', sans-serif; --sans:'Inter', sans-serif; }
+
+  /* density */
+  [data-density="compact"] { --section-pad: 3.5rem; --line: 1.55; --step: 0.85rem; }
+  [data-density="airy"]    { --section-pad: 6rem;   --line: 1.7;  --step: 1rem;    }
+
+  /* dark */
+  [data-theme="dark"] {
+    --bg:#111110;
+    --surface:#1a1a19;
+    --ink:#eceae3;
+    --ink-2:#cfcdc6;
+    --muted:#8f8d86;
+    --rule:#2a2a28;
+    --rule-2:#222220;
+    --accent-tint: rgba(255,255,255,0.035);
+  }
+  [data-theme="dark"][data-accent="forest"]  { --accent:#6ab18e; --accent-soft:#8ccdaa; }
+  [data-theme="dark"][data-accent="crimson"] { --accent:#e4908f; --accent-soft:#eea9a8; }
+  [data-theme="dark"][data-accent="navy"]    { --accent:#8fa8ce; --accent-soft:#b0c0dd; }
+  [data-theme="dark"][data-accent="rust"]    { --accent:#e59868; --accent-soft:#eeb28a; }
+  [data-theme="dark"][data-accent="ink"]     { --accent:#eceae3; --accent-soft:#cfcdc6; }
+
+  /* ============================================================
+     RESET / BASE
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: var(--line);
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color .15s ease, text-decoration-color .15s ease;
+  }
+  a:hover { color: var(--accent); text-decoration-thickness: 2px; }
+
+  p { margin: 0 0 1em; max-width: var(--measure); text-wrap: pretty; }
+  h1,h2,h3,h4 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; margin: 0; color: var(--ink); line-height: 1.15; }
+  h1 { font-size: clamp(2.4rem, 4.2vw, 3.4rem); font-weight: 600; letter-spacing: -0.02em; }
+  h2 { font-size: 1.65rem; }
+  h3 { font-size: 1.2rem; font-weight: 600; }
+  small, .meta { font-family: var(--mono); font-size: .78rem; letter-spacing: .02em; color: var(--muted); text-transform: uppercase; }
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  .shell {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  nav.top {
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in oklab, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .row {
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 0;
+  }
+  nav .brand {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  nav .brand:hover { color: var(--accent); }
+  nav .links { display:flex; gap: clamp(1rem, 3vw, 2rem); align-items:center; }
+  nav .links a {
+    font-family: var(--sans);
+    font-size: .95rem;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 6px 0;
+  }
+  nav .links a:hover, nav .links a.active { color: var(--ink); }
+  nav .links a.active { border-bottom: 1px solid var(--accent); }
+
+  section.block { padding: var(--section-pad) 0; border-bottom: 1px solid var(--rule-2); }
+  section.block:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    align-items: baseline;
+  }
+  .section-head .num { font-family: var(--mono); color: var(--muted); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; padding-top: .35rem; }
+  .section-head h2 { font-style: italic; font-weight: 500; }
+
+  .col-body {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+  }
+  .col-body > .aside { }
+  .col-body > .main { max-width: 720px; }
+
+  @media (max-width: 780px) {
+    .section-head, .col-body { grid-template-columns: 1fr; gap: 0.5rem; }
+    .col-body > .main { max-width: none; }
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero {
+    padding: clamp(4rem, 9vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  .hero-grid[data-layout="photo-right"] { grid-template-columns: 1fr 220px; }
+  .hero-grid[data-layout="photo-right"] .hero-photo { order: 2; }
+  .hero-grid[data-layout="centered"] { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .hero-grid[data-layout="centered"] .hero-text p { margin-left:auto; margin-right:auto; }
+  .hero-grid[data-layout="centered"] .hero-links { justify-content: center; }
+  .hero-grid[data-layout="centered"] .hero-status { justify-content: center; display: flex; }
+  .hero-grid[data-layout="no-photo"] { grid-template-columns: 1fr; }
+  .hero-grid[data-layout="no-photo"] .hero-photo { display: none; }
+
+  @media (max-width: 780px) {
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .hero-grid .hero-photo { order: 0 !important; }
+  }
+
+  .hero-photo {
+    width: 220px; height: 260px;
+    object-fit: cover;
+    border-radius: 2px;
+    filter: grayscale(0.15) contrast(1.02);
+    box-shadow: 0 1px 0 var(--rule), 10px 10px 0 var(--accent-tint);
+  }
+  .hero-photo.monogram {
+    display: flex; align-items: center; justify-content: center;
+    background:
+      linear-gradient(180deg, var(--surface) 0%, var(--accent-tint) 100%);
+    border: 1px solid var(--rule);
+    filter: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-photo.monogram::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(45deg,
+        transparent 0, transparent 12px,
+        color-mix(in oklab, var(--rule) 60%, transparent) 12px,
+        color-mix(in oklab, var(--rule) 60%, transparent) 13px);
+    opacity: .5;
+  }
+  .hero-photo.monogram span {
+    position: relative;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 5rem;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .hero h1 { margin-bottom: .5rem; }
+  .hero .subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--ink-2);
+    font-weight: 400;
+    max-width: 38ch;
+    margin-bottom: 1.75rem;
+  }
+  .hero-lede { font-size: 1.08rem; color: var(--ink-2); max-width: 60ch; }
+  .hero-lede strong { color: var(--ink); font-weight: 600; }
+
+  .hero-status {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--accent);
+    background: var(--accent-tint);
+    padding: 6px 12px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .hero-status .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 50%, transparent);
+    animation: pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 55%, transparent); }
+    70%  { box-shadow: 0 0 0 8px color-mix(in oklab, var(--accent) 0%, transparent); }
+    100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 0%, transparent); }
+  }
+
+  .hero-links {
+    display: flex; flex-wrap: wrap;
+    gap: 1.25rem 1.75rem;
+    margin-top: 1.5rem;
+    font-size: .95rem;
+  }
+  .hero-links a {
+    text-decoration: none;
+    color: var(--ink-2);
+    display: inline-flex; align-items: center; gap: .4rem;
+  }
+  .hero-links a::before {
+    content: "→";
+    color: var(--accent);
+    font-family: var(--mono);
+    transition: transform .15s ease;
+    display: inline-block;
+  }
+  .hero-links a:hover { color: var(--accent); }
+  .hero-links a:hover::before { transform: translateX(2px); }
+
+  /* ============================================================
+     NOW / CURRENTLY
+     ============================================================ */
+  .now-list { display: grid; gap: 1.25rem; }
+  .now-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px dotted var(--rule);
+    align-items: baseline;
+  }
+  .now-item:last-child { border-bottom: none; }
+  .now-item .when { font-family: var(--mono); font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .now-item .what { font-size: 1rem; }
+  .now-item .what strong { font-weight: 600; }
+  .now-item .what .place { color: var(--accent); font-weight: 500; }
+  @media (max-width: 600px) { .now-item { grid-template-columns: 1fr; gap: .25rem; } }
+
+  /* ============================================================
+     RESEARCH NARRATIVE
+     ============================================================ */
+  .narrative p { font-size: 1.08rem; max-width: 62ch; color: var(--ink-2); }
+  .narrative p:first-of-type::first-line { font-variant: small-caps; letter-spacing: .04em; }
+  .narrative .pull {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.45;
+    color: var(--ink);
+    border-left: 2px solid var(--accent);
+    padding: .25rem 0 .25rem 1.25rem;
+    margin: 2rem 0;
+    max-width: 54ch;
+  }
+
+  .threads { margin-top: 2.5rem; }
+  .thread {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--rule-2);
+  }
+  .thread:last-child { border-bottom: 1px solid var(--rule-2); }
+  .thread .thread-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--accent);
+  }
+  .thread h3 { margin-bottom: .4rem; font-size: 1.1rem; }
+  .thread p { font-size: .98rem; color: var(--ink-2); margin-bottom: 0; max-width: 60ch; }
+
+  /* ============================================================
+     WORK / PAPERS
+     ============================================================ */
+  .paper { margin-bottom: 3rem; }
+  .paper:last-child { margin-bottom: 0; }
+  .paper-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1rem;
+    margin-bottom: .6rem;
+  }
+  .paper-venue {
+    font-family: var(--mono);
+    font-size: .74rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    padding: 3px 8px;
+    background: var(--accent-tint);
+    border-radius: 2px;
+  }
+  .paper-year { font-family: var(--mono); font-size: .78rem; color: var(--muted); }
+  .paper h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: .5rem; line-height: 1.25; }
+  .paper .authors { font-size: .95rem; color: var(--ink-2); margin-bottom: .75rem; }
+  .paper .authors .me { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 2px; }
+  .paper .abstract { font-size: 1rem; color: var(--ink-2); max-width: 60ch; }
+  .paper .paper-links { margin-top: .9rem; display: flex; flex-wrap: wrap; gap: 1rem; font-size: .9rem; }
+  .paper .paper-links a { text-decoration: none; font-family: var(--mono); text-transform: uppercase; letter-spacing: .04em; font-size: .78rem; color: var(--ink-2); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 2px; }
+  .paper .paper-links a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-tint); }
+
+  .figure {
+    margin: 1.5rem 0 .5rem;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .figure .fig-inner {
+    aspect-ratio: 16/7;
+    background:
+      repeating-linear-gradient(135deg,
+        transparent 0, transparent 14px,
+        color-mix(in oklab, var(--rule) 60%, transparent) 14px,
+        color-mix(in oklab, var(--rule) 60%, transparent) 15px);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .figure .fig-label {
+    font-family: var(--mono);
+    font-size: .75rem;
+    color: var(--muted);
+    background: var(--surface);
+    padding: 6px 12px;
+    border: 1px solid var(--rule);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .figure figcaption {
+    padding: 10px 14px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: .76rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    display: flex; justify-content: space-between; gap: 1rem;
+  }
+
+  .paper-figure.merit .fig-inner {
+    aspect-ratio: 16/7;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .paper-figure.merit svg { width: 100%; height: 100%; display: block; }
+
+  /* pipeline diagram colors — uses tokens */
+  .diag-box { fill: var(--surface); stroke: var(--ink); stroke-width: 1; }
+  .diag-box-accent { fill: var(--accent-tint); stroke: var(--accent); stroke-width: 1.25; }
+  .diag-text { font-family: var(--mono); font-size: 11px; fill: var(--ink-2); text-transform: uppercase; letter-spacing: 0.04em; }
+  .diag-text-accent { font-family: var(--mono); font-size: 10px; fill: var(--accent); letter-spacing: 0.04em; }
+  .diag-arrow { stroke: var(--ink-2); stroke-width: 1; fill: none; marker-end: url(#arrow); }
+  .diag-label { font-family: var(--serif); font-style: italic; font-size: 13px; fill: var(--muted); }
+
+  /* GNN graph viz */
+  .graph-node { fill: var(--surface); stroke: var(--ink-2); stroke-width: 1; }
+  .graph-node.evidence { fill: var(--accent-tint); stroke: var(--accent); }
+  .graph-edge { stroke: var(--ink-2); stroke-width: 0.5; opacity: 0.35; fill: none; }
+  .graph-edge.cross { stroke: var(--accent); stroke-width: 1; opacity: 0.6; stroke-dasharray: 2 2; }
+
+  /* results callout */
+  .metric {
+    display: inline-flex; flex-direction: column;
+    padding: .5rem .9rem;
+    border-left: 2px solid var(--accent);
+    background: var(--accent-tint);
+    margin: .75rem 0.5rem 0 0;
+    border-radius: 0 2px 2px 0;
+  }
+  .metric .val { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); }
+  .metric .key { font-family: var(--mono); font-size: .7rem; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+
+  /* ============================================================
+     PROJECTS
+     ============================================================ */
+  .projects { display: grid; gap: 0; }
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule-2);
+    align-items: baseline;
+  }
+  .project:last-child { border-bottom: 1px solid var(--rule-2); }
+  .project:hover h3 a { color: var(--accent); }
+  .project h3 { font-size: 1.1rem; margin-bottom: .35rem; }
+  .project h3 a { text-decoration: none; color: var(--ink); }
+  .project p { font-size: .96rem; color: var(--ink-2); margin-bottom: .5rem; max-width: 60ch; }
+  .project .tags {
+    display:flex; flex-wrap: wrap; gap: .4rem;
+  }
+  .project .tag {
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .project .tag::before { content: "#"; color: var(--accent); }
+  .project .year { font-family: var(--mono); font-size: .78rem; color: var(--muted); text-align: right; }
+  @media (max-width: 600px) { .project { grid-template-columns: 1fr; } .project .year { text-align: left; } }
+
+  /* ============================================================
+     WRITING
+     ============================================================ */
+  .writing-list .writing-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--rule-2);
+    align-items: baseline;
+  }
+  .writing-list .writing-item:last-child { border-bottom: 1px solid var(--rule-2); }
+  .writing-list .when { font-family: var(--mono); font-size: .76rem; color: var(--muted); text-transform: uppercase; }
+  .writing-list h3 { font-size: 1.05rem; font-weight: 500; margin: 0; }
+  .writing-list h3 a { text-decoration: none; color: var(--ink); }
+  .writing-list h3 a:hover { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent); }
+  .writing-list .where { font-family: var(--mono); font-size: .76rem; color: var(--muted); }
+  @media (max-width: 600px) { .writing-list .writing-item { grid-template-columns: 1fr; gap: .2rem; } }
+
+  /* ============================================================
+     CV SNAPSHOT
+     ============================================================ */
+  .cv-snap { display: grid; gap: 2.5rem; }
+  .cv-group h3 {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 500;
+    padding-bottom: .75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cv-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: .75rem 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .cv-row:last-child { border-bottom: none; }
+  .cv-row .title { font-size: 1rem; font-weight: 500; }
+  .cv-row .org { color: var(--ink-2); font-size: .95rem; }
+  .cv-row .when { font-family: var(--mono); font-size: .78rem; color: var(--muted); text-align: right; align-self: center; }
+  @media (max-width: 600px) { .cv-row { grid-template-columns: 1fr; } .cv-row .when { text-align: left; } }
+
+  /* ============================================================
+     TEACHING
+     ============================================================ */
+  .teach-list { display: grid; gap: .75rem; }
+  .teach-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 1.5rem;
+    padding: .6rem 0;
+    border-bottom: 1px dotted var(--rule);
+    align-items: baseline;
+  }
+  .teach-item:last-child { border-bottom: none; }
+  .teach-item .role { font-family: var(--mono); font-size: .78rem; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
+  .teach-item .detail { font-size: .98rem; color: var(--ink-2); }
+  .teach-item .detail strong { color: var(--ink); font-weight: 500; }
+
+  /* ============================================================
+     CONTACT
+     ============================================================ */
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 780px) { .contact { grid-template-columns: 1fr; } }
+  .contact h2 { font-size: 2rem; font-style: italic; font-weight: 500; margin-bottom: 1rem; }
+  .contact p { color: var(--ink-2); max-width: 42ch; }
+  .contact-info { display: grid; gap: .9rem; }
+  .contact-info .ci {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--rule-2);
+    align-items: baseline;
+  }
+  .contact-info .ci .k { font-family: var(--mono); font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .contact-info .ci .v a { text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--accent); }
+  .contact-info .ci .v a:hover { color: var(--accent); }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer.site {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+
+  /* ============================================================
+     TWEAKS PANEL
+     ============================================================ */
+  #tweaks-panel {
+    position: fixed; right: 20px; bottom: 20px;
+    width: 300px; max-height: 80vh; overflow-y: auto;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    box-shadow: 0 8px 28px rgba(0,0,0,.12);
+    z-index: 9999;
+    font-family: var(--sans);
+    display: none;
+    border-radius: 3px;
+  }
+  #tweaks-panel.open { display: block; }
+  #tweaks-panel .hd {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  #tweaks-panel .hd .title { font-family: var(--serif); font-style: italic; font-size: 1rem; font-weight: 500; }
+  #tweaks-panel .hd button { background: none; border: none; cursor: pointer; color: var(--muted); font-size: 1.2rem; padding: 0; }
+  #tweaks-panel .body { padding: 14px 16px 18px; }
+  #tweaks-panel .field { margin-bottom: 16px; }
+  #tweaks-panel label {
+    display: block;
+    font-family: var(--mono); font-size: .7rem;
+    text-transform: uppercase; letter-spacing: .08em;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  #tweaks-panel .opts { display: flex; flex-wrap: wrap; gap: 6px; }
+  #tweaks-panel .opt {
+    flex: 1 1 auto;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: .82rem;
+    color: var(--ink-2);
+    border-radius: 2px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  #tweaks-panel .opt:hover { border-color: var(--accent); color: var(--accent); }
+  #tweaks-panel .opt.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  #tweaks-panel .swatch-row { display: flex; gap: 6px; }
+  #tweaks-panel .swatch {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    outline: 1px solid var(--rule);
+    outline-offset: 2px;
+  }
+  #tweaks-panel .swatch.active { outline: 1px solid var(--accent); outline-offset: 3px; }
+  #tweaks-panel .toggles { display: grid; gap: 6px; }
+  #tweaks-panel .toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 4px 0;
+    font-size: .88rem; color: var(--ink-2);
+  }
+  #tweaks-panel .toggle input { accent-color: var(--accent); }
+
+  /* print */
+  @media print {
+    nav.top, #tweaks-panel, footer.site { display: none; }
+    body { background: #fff; color: #000; }
+    section.block { page-break-inside: avoid; border-bottom: 1px solid #ccc; padding: 2rem 0; }
+  }
+
+  /* anchor offset for sticky nav */
+  section[id] { scroll-margin-top: 80px; }
+
+  /* small reveal */
+  .reveal { opacity: 0; transform: translateY(8px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+</style>
 </head>
-<body>
+<body data-accent="forest" data-font="crimson-source" data-theme="light" data-density="airy">
 
-    <nav>
-        <div class="container nav-wrapper">
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="publications.html">Publications</a>
-                <a href="cv.html">CV</a>
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="top">
+  <div class="shell row">
+    <a class="brand" href="#top">Mir Nafis Sharear Shopnil</a>
+    <div class="links">
+      <a href="#research" class="nav-research">Research</a>
+      <a href="#work">Work</a>
+      <a href="#projects" class="nav-projects">Projects</a>
+      <a href="#writing" class="nav-writing">Writing</a>
+      <a href="cv.html">CV</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero">
+  <div class="shell">
+    <div class="hero-grid" id="hero-grid" data-layout="photo-left">
+      <img class="hero-photo" src="assets/IMG_1635.png" alt="Mir Nafis Sharear Shopnil" />
+      <div class="hero-text">
+        <div class="hero-status">
+          <span class="dot"></span>
+          Applying for PhD (Fall 2026) · Open to Research Engineer roles
+        </div>
+        <h1>Mir Nafis Sharear&nbsp;Shopnil</h1>
+        <p class="subtitle">AI researcher working on LLM reasoning, mechanistic interpretability, and agentic systems.</p>
+        <p class="hero-lede">
+          I'm an <strong>AI Engineer at Technovative Solutions</strong> (Manchester) and a <strong>Research Fellow at Fatima Fellowship</strong>. My work sits at the intersection of <em>multi-agent reasoning</em>, <em>verifiable evidence</em>, and the tools we use to tell when a model is actually thinking — and when it's just confabulating.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:sharears4077@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=pZ70qSoAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://github.com/namikazi25" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/mirnafissharearshopnil/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/Mir_N_S_Shopnil_Academic_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     NOW / CURRENTLY
+     ============================================================ -->
+<section class="block" id="now">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 01 · Currently</div>
+      <h2>What I'm working on</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">Updated Apr 2026</span></div>
+      <div class="main">
+        <div class="now-list">
+          <div class="now-item">
+            <span class="when">Aug 2025 →</span>
+            <span class="what">
+              <strong>AI Engineer, Lead Architect</strong> at <span class="place">Technovative Solutions</span> — architecting agentic workflows for EU climate-adaptation programmes (<em>CLIMATEAdaptEOSC</em>, <em>EcoPlast</em>). Operationalising foundation models (Prithvi EO, SimCLR) as containerised services. Mentoring 10 junior engineers.
+            </span>
+          </div>
+          <div class="now-item">
+            <span class="when">Sep 2024 →</span>
+            <span class="what">
+              <strong>Research Fellow</strong> at <span class="place">Fatima Fellowship</span> — building <em>MERIT</em>, a verifiable multimodal misinformation pipeline. Submitted to COLM 2026; companion GNN paper accepted at PP-MisDet@CVPR 2026.
+            </span>
+          </div>
+          <div class="now-item">
+            <span class="when">Reading</span>
+            <span class="what">
+              Anthropic's circuit-level interp work, the DeepSeek reasoning reports, and anything that makes <em>tool-use traces auditable</em> rather than impressive.
+            </span>
+          </div>
+          <div class="now-item">
+            <span class="when">Looking for</span>
+            <span class="what">
+              PhD advisors in <strong>LLM reasoning, mechanistic interpretability, and agentic systems</strong> (CMU · MIT · Stanford · Edinburgh) — and research-engineer roles where the research is still real.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESEARCH NARRATIVE
+     ============================================================ -->
+<section class="block" id="research">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 02 · Research</div>
+      <h2>A through-line</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">2021 → 2026</span></div>
+      <div class="main narrative">
+        <p>
+          I started out in undergrad trying to <em>explain</em> black-box rumour-detection models — why does this LSTM flag a post as a lie? That question has followed me through every project since, and has kept sharpening.
+        </p>
+        <p class="pull">
+          If a model's output can't be audited — traced back to evidence, to a rationale, to a circuit — then for high-stakes work it may as well be a coin flip with confidence.
+        </p>
+        <p>
+          My MSc pushed me toward graph neural networks: structure is a useful prior when you're trying to reason about <em>relations</em> between claims and evidence. At Fatima Fellowship I got to put that into practice — first as a cross-graph GNN, then as an agentic pipeline (MERIT) where LVLMs plan, call web-search tools, and build verifiable evidence graphs before committing to an answer.
+        </p>
+        <p>
+          What I want to do next, in a PhD, is go one level deeper: not just <em>build</em> reasoning systems but <em>understand</em> them. Mechanistic interpretability of multi-step reasoning, especially in agentic settings where one model delegates to tools or to other models. How does reasoning compose? Where does it break? Can we build agents whose chains we can audit the way we audit circuits?
+        </p>
+
+        <div class="threads">
+          <div class="thread">
+            <div class="thread-num">i.</div>
+            <div>
+              <h3>Reasoning in LLMs</h3>
+              <p>Chain-of-thought is convenient but unfaithful. I'm interested in what counts as <em>actual</em> reasoning inside a forward pass, and how the scratchpad relates to the computation.</p>
             </div>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+          </div>
+          <div class="thread">
+            <div class="thread-num">ii.</div>
+            <div>
+              <h3>Mechanistic interpretability</h3>
+              <p>Circuits-level methods — SAEs, causal mediation, activation patching — applied to the reasoning traces I care about, not just toy tasks.</p>
+            </div>
+          </div>
+          <div class="thread">
+            <div class="thread-num">iii.</div>
+            <div>
+              <h3>Agentic reasoning &amp; communication</h3>
+              <p>What happens when one reasoner delegates to another? Tool-calls as a window into compositional structure; inter-agent communication as a proxy for intermediate representation.</p>
+            </div>
+          </div>
+          <div class="thread">
+            <div class="thread-num">iv.</div>
+            <div>
+              <h3>Verifiable evidence</h3>
+              <p>Outputs are only as good as the rationales they sit on. Structured evidence (graphs, citations, tool traces) is how I keep systems honest.</p>
+            </div>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <main>
-        <div class="container">
-            
-            <header class="profile">
-                <div class="profile-wrapper">
-                    <img src="assets/IMG_1635.png" alt="Mir Nafis Sharear Shopnil" class="profile-photo">
-                    <div class="profile-content">
-                        <h1>Mir Nafis Sharear Shopnil</h1>
-                        <p class="role">AI Engineer & Research Fellow</p>
-                        <p class="affiliation">Technovative Solutions Ltd • Fatima Fellowship</p>
-                        
-                        <div class="links" style="margin-top: 15px;">
-                            <a href="mailto:sharears4077@gmail.com">Email</a> •
-                            <a href="https://scholar.google.com/citations?user=pZ70qSoAAAAJ&hl=en" target="_blank">Scholar</a> •
-                            <a href="https://github.com/namikazi25" target="_blank">GitHub</a> •
-                            <a href="https://www.linkedin.com/in/mirnafissharearshopnil/" target="_blank">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-            </header>
+<!-- ============================================================
+     SELECTED WORK / PAPERS
+     ============================================================ -->
+<section class="block" id="work">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 03 · Selected Work</div>
+      <h2>Papers &amp; preprints</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside">
+        <span class="meta">See all →</span>
+        <div style="margin-top:.4rem;"><a href="publications.html" style="font-family:var(--sans); font-size:.95rem;">Full publications</a></div>
+      </div>
+      <div class="main">
 
-            <section>
-                <h2>About</h2>
-                <p>
-                    I am an AI researcher bridging the gap between <strong>Multi-Agent Systems</strong>, <strong>Large Language Models</strong>, and real-world reliability.
-                </p>
-                <p>
-                    Currently, I work as an AI Engineer at Technovative Solutions, architecting agentic workflows for climate adaptation, and as a Research Fellow at Fatima Fellowship, developing verifiable misinformation detection pipelines.
-                </p>
-                <div style="margin-top: 15px;">
-                    <span class="badge">Python</span>
-                    <span class="badge">PyTorch</span>
-                    <span class="badge">LangChain</span>
-                    <span class="badge">GNNs</span>
-                    <span class="badge">FastAPI</span>
-                    <span class="badge">AWS</span>
-                </div>
-            </section>
+        <!-- Paper 1: MERIT -->
+        <article class="paper">
+          <div class="paper-head">
+            <span class="paper-venue">Under review · COLM 2026</span>
+            <span class="paper-year">arXiv · 2510.17590</span>
+          </div>
+          <h3>MERIT: A Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning</h3>
+          <div class="authors"><span class="me">M. N. Sharear Shopnil</span>, S. Duwal, A. Tyagi, A. M. Proma</div>
+          <p class="abstract">
+            An agentic pipeline that orchestrates large vision-language models with web search to build <em>verifiable evidence graphs</em> and traceable rationales before committing to a verdict. The point isn't accuracy — it's that you can read the trace and check the work.
+          </p>
 
-            <section>
-                <h2>Research Focus</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>🤖 Agentic AI</h3>
-                        <p>Orchestrating LLMs to solve complex, multi-step reasoning tasks with tool use.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🕵️ Misinformation</h3>
-                        <p>Building multimodal verification pipelines using verifiable evidence graphs.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🕸 Graph Learning</h3>
-                        <p>Utilizing GCNs/GATs for structured reasoning and link prediction.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🧠 Interpretability</h3>
-                        <p>Demystifying model decisions through mechanistic analysis and rationales.</p>
-                    </div>
-                </div>
-            </section>
+          <figure class="figure paper-figure merit">
+            <div class="fig-inner">
+              <svg viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                    <path d="M0,0 L8,4 L0,8 z" fill="currentColor" class="diag-arrow-head"/>
+                  </marker>
+                </defs>
 
-            <section>
-                <h2>Selected Works</h2>
-                
-                <div class="pub-card">
-                    <h3 class="pub-title">MERIT: Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning</h3>
-                    <p class="pub-venue">Under Review @ COLM Conference</p>
-                    <p class="pub-desc">A pipeline orchestrating LVLMs with web-search to build verifiable evidence graphs.</p>
-                    <div class="pub-links" style="margin-top: 10px;">
-                        <span class="badge">Agentic AI</span>
-                        <span class="badge">Multimodal</span>
-                        <a href="https://arxiv.org/abs/2510.17590" target="_blank" style="font-weight:bold;">Read Paper →</a>
-                    </div>
-                </div>
+                <!-- input -->
+                <rect x="20" y="150" width="130" height="60" rx="2" class="diag-box"/>
+                <text x="85" y="178" text-anchor="middle" class="diag-text">Claim + Image</text>
+                <text x="85" y="196" text-anchor="middle" class="diag-text">(multimodal)</text>
 
-                <div class="pub-card">
-                    <h3 class="pub-title">Evidence-Grounded Multimodal Detection with GNNs</h3>
-                    <p class="pub-venue">Accepted @ PP-MisDet@CVPR2026</p>
-                    <p class="pub-desc">Cross-graph attention networks for image-text consistency scoring. (93.05% Accuracy)</p>
-                    <div class="pub-links" style="margin-top: 10px;">
-                        <span class="badge">GNN</span>
-                        <span class="badge">Computer Vision</span>
-                        <a href="https://arxiv.org/abs/2505.18221" target="_blank" style="font-weight:bold;">Read Paper →</a>
-                    </div>
-                </div>
-            </section>
+                <!-- planner -->
+                <rect x="200" y="130" width="160" height="100" rx="2" class="diag-box-accent"/>
+                <text x="280" y="158" text-anchor="middle" class="diag-text-accent">LVLM Planner</text>
+                <text x="280" y="180" text-anchor="middle" class="diag-text">decompose</text>
+                <text x="280" y="196" text-anchor="middle" class="diag-text">query plan</text>
 
-            <section>
-                <h2>Updates</h2>
-                <ul class="news-list" style="list-style: none;">
-                    <li style="margin-bottom: 10px;">
-                        <span class="badge" style="background:var(--border)">Mar 2026</span> 
-                        Submitted MERIT framework to COLM Conference.
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span class="badge" style="background:var(--border)">Aug 2025</span> 
-                        Joined Technovative Solutions as AI Engineer (Lead Architect).
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span class="badge" style="background:var(--border)">Sep 2024</span> 
-                        Selected as Research Fellow at Fatima Fellowship.
-                    </li>
-                </ul>
-            </section>
+                <!-- web tools -->
+                <rect x="420" y="40" width="150" height="50" rx="2" class="diag-box"/>
+                <text x="495" y="70" text-anchor="middle" class="diag-text">Web Search</text>
+
+                <rect x="420" y="110" width="150" height="50" rx="2" class="diag-box"/>
+                <text x="495" y="140" text-anchor="middle" class="diag-text">Image Retrieval</text>
+
+                <rect x="420" y="180" width="150" height="50" rx="2" class="diag-box"/>
+                <text x="495" y="210" text-anchor="middle" class="diag-text">Entity Grounding</text>
+
+                <rect x="420" y="250" width="150" height="50" rx="2" class="diag-box"/>
+                <text x="495" y="280" text-anchor="middle" class="diag-text">Fact Check APIs</text>
+
+                <!-- evidence graph -->
+                <rect x="620" y="120" width="130" height="120" rx="2" class="diag-box-accent"/>
+                <text x="685" y="145" text-anchor="middle" class="diag-text-accent">Evidence</text>
+                <text x="685" y="160" text-anchor="middle" class="diag-text-accent">Graph</text>
+                <!-- tiny nodes -->
+                <circle cx="650" cy="190" r="5" class="graph-node evidence"/>
+                <circle cx="685" cy="175" r="5" class="graph-node evidence"/>
+                <circle cx="720" cy="195" r="5" class="graph-node evidence"/>
+                <circle cx="660" cy="215" r="5" class="graph-node evidence"/>
+                <circle cx="705" cy="220" r="5" class="graph-node evidence"/>
+                <line x1="650" y1="190" x2="685" y2="175" class="graph-edge cross"/>
+                <line x1="685" y1="175" x2="720" y2="195" class="graph-edge cross"/>
+                <line x1="650" y1="190" x2="660" y2="215" class="graph-edge cross"/>
+                <line x1="685" y1="175" x2="705" y2="220" class="graph-edge cross"/>
+                <line x1="660" y1="215" x2="705" y2="220" class="graph-edge cross"/>
+                <line x1="720" y1="195" x2="705" y2="220" class="graph-edge cross"/>
+
+                <!-- verdict -->
+                <rect x="800" y="150" width="80" height="60" rx="2" class="diag-box"/>
+                <text x="840" y="180" text-anchor="middle" class="diag-text">Verdict</text>
+                <text x="840" y="196" text-anchor="middle" class="diag-text">+ Rationale</text>
+
+                <!-- arrows -->
+                <g style="color: var(--ink-2);">
+                  <path class="diag-arrow" d="M150 180 L200 180"/>
+                  <path class="diag-arrow" d="M360 160 L420 80"/>
+                  <path class="diag-arrow" d="M360 170 L420 135"/>
+                  <path class="diag-arrow" d="M360 195 L420 205"/>
+                  <path class="diag-arrow" d="M360 210 L420 275"/>
+                  <path class="diag-arrow" d="M570 65  L620 150"/>
+                  <path class="diag-arrow" d="M570 135 L620 165"/>
+                  <path class="diag-arrow" d="M570 205 L620 200"/>
+                  <path class="diag-arrow" d="M570 275 L620 220"/>
+                  <path class="diag-arrow" d="M750 180 L800 180"/>
+                </g>
+
+                <!-- labels -->
+                <text x="190" y="60" class="diag-label">fig. 1 — MERIT pipeline</text>
+                <text x="190" y="330" class="diag-label">claim → plan → tools → evidence graph → audited verdict</text>
+              </svg>
+            </div>
+            <figcaption>
+              <span>Fig. 1 — MERIT pipeline overview</span>
+              <span>Shopnil et al., 2026</span>
+            </figcaption>
+          </figure>
+
+          <div style="margin-top: .75rem;">
+            <div class="metric"><span class="val">Verifiable</span><span class="key">evidence trace</span></div>
+            <div class="metric"><span class="val">Modular</span><span class="key">tool interface</span></div>
+          </div>
+
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2510.17590" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://arxiv.org/pdf/2510.17590" target="_blank" rel="noopener">PDF</a>
+            <a href="#" onclick="navigator.clipboard?.writeText('Shopnil, M. N. S., Duwal, S., Tyagi, A., Proma, A. M. (2026). MERIT: A Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning. arXiv:2510.17590.'); this.textContent='Copied'; setTimeout(()=>this.textContent='Cite', 1200); return false;">Cite</a>
+          </div>
+        </article>
+
+        <!-- Paper 2: GNN -->
+        <article class="paper">
+          <div class="paper-head">
+            <span class="paper-venue">Accepted · PP-MisDet @ CVPR 2026</span>
+            <span class="paper-year">arXiv · 2505.18221</span>
+          </div>
+          <h3>Evidence-Grounded Multimodal Misinformation Detection with Attention-Based GNNs</h3>
+          <div class="authors">S. Duwal, <span class="me">M. N. Sharear Shopnil</span>, A. Tyagi, A. M. Proma</div>
+          <p class="abstract">
+            We formalise claims and evidence as separate graphs and score image-text consistency with a <em>cross-graph attention</em> GNN. The attention maps turn out to be interpretable; the accuracy (93.05%) beats the strongest LLM baseline by 2.82 points.
+          </p>
+
+          <figure class="figure paper-figure">
+            <div class="fig-inner">
+              <svg viewBox="0 0 900 320" preserveAspectRatio="xMidYMid meet">
+                <!-- left graph: claim -->
+                <text x="150" y="40" text-anchor="middle" class="diag-text">claim graph</text>
+                <circle cx="100" cy="100" r="16" class="graph-node"/>
+                <circle cx="200" cy="90"  r="14" class="graph-node"/>
+                <circle cx="80"  cy="180" r="14" class="graph-node"/>
+                <circle cx="170" cy="190" r="16" class="graph-node"/>
+                <circle cx="230" cy="230" r="12" class="graph-node"/>
+                <circle cx="130" cy="250" r="12" class="graph-node"/>
+                <line x1="100" y1="100" x2="200" y2="90"  class="graph-edge"/>
+                <line x1="100" y1="100" x2="80"  y2="180" class="graph-edge"/>
+                <line x1="200" y1="90"  x2="170" y2="190" class="graph-edge"/>
+                <line x1="80"  y1="180" x2="170" y2="190" class="graph-edge"/>
+                <line x1="170" y1="190" x2="230" y2="230" class="graph-edge"/>
+                <line x1="170" y1="190" x2="130" y2="250" class="graph-edge"/>
+                <line x1="80"  y1="180" x2="130" y2="250" class="graph-edge"/>
+
+                <!-- right graph: evidence -->
+                <text x="750" y="40" text-anchor="middle" class="diag-text">evidence graph</text>
+                <circle cx="700" cy="100" r="14" class="graph-node evidence"/>
+                <circle cx="800" cy="120" r="16" class="graph-node evidence"/>
+                <circle cx="680" cy="200" r="16" class="graph-node evidence"/>
+                <circle cx="780" cy="210" r="14" class="graph-node evidence"/>
+                <circle cx="830" cy="240" r="12" class="graph-node evidence"/>
+                <circle cx="720" cy="260" r="12" class="graph-node evidence"/>
+                <line x1="700" y1="100" x2="800" y2="120" class="graph-edge"/>
+                <line x1="700" y1="100" x2="680" y2="200" class="graph-edge"/>
+                <line x1="800" y1="120" x2="780" y2="210" class="graph-edge"/>
+                <line x1="680" y1="200" x2="780" y2="210" class="graph-edge"/>
+                <line x1="780" y1="210" x2="830" y2="240" class="graph-edge"/>
+                <line x1="680" y1="200" x2="720" y2="260" class="graph-edge"/>
+
+                <!-- cross-graph attention -->
+                <text x="450" y="40" text-anchor="middle" class="diag-text-accent">cross-graph attention</text>
+                <line x1="200" y1="90"  x2="700" y2="100" class="graph-edge cross"/>
+                <line x1="200" y1="90"  x2="800" y2="120" class="graph-edge cross"/>
+                <line x1="170" y1="190" x2="680" y2="200" class="graph-edge cross"/>
+                <line x1="170" y1="190" x2="780" y2="210" class="graph-edge cross"/>
+                <line x1="100" y1="100" x2="700" y2="100" class="graph-edge cross"/>
+                <line x1="230" y1="230" x2="780" y2="210" class="graph-edge cross"/>
+                <line x1="130" y1="250" x2="720" y2="260" class="graph-edge cross"/>
+
+                <!-- scoring head -->
+                <rect x="380" y="150" width="140" height="30" rx="2" class="diag-box"/>
+                <text x="450" y="170" text-anchor="middle" class="diag-text">consistency score</text>
+
+                <line x1="280" y1="160" x2="380" y2="165" class="graph-edge"/>
+                <line x1="620" y1="160" x2="520" y2="165" class="graph-edge"/>
+
+                <text x="450" y="300" text-anchor="middle" class="diag-label">fig. 2 — cross-graph attention between claim and evidence</text>
+              </svg>
+            </div>
+            <figcaption>
+              <span>Fig. 2 — Cross-graph attention between claim and evidence nodes</span>
+              <span>Duwal, Shopnil et al., 2026</span>
+            </figcaption>
+          </figure>
+
+          <div style="margin-top: .75rem;">
+            <div class="metric"><span class="val">93.05%</span><span class="key">accuracy</span></div>
+            <div class="metric"><span class="val">+2.82</span><span class="key">pts vs LLM SOTA</span></div>
+          </div>
+
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2505.18221" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://arxiv.org/pdf/2505.18221" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </article>
+
+        <!-- Paper 3: Rumor Detection -->
+        <article class="paper">
+          <div class="paper-head">
+            <span class="paper-venue">IEEE UEMCON · 2021</span>
+            <span class="paper-year">Undergrad thesis work</span>
+          </div>
+          <h3>Demystifying Black-box Learning Models of Rumor Detection from Social Media Posts</h3>
+          <div class="authors">F. Tafannum, <span class="me">M. N. Sharear Shopnil</span>, A. Salsabil, N. Ahmed, et al.</div>
+          <p class="abstract">
+            Applied explainable-AI techniques (LIME, attention attribution) to interpret black-box rumor detection models trained on social media data. The question that started everything: <em>why</em> did the model say that?
+          </p>
+          <div class="paper-links">
+            <a href="https://doi.org/10.1109/UEMCON53757.2021.9666567" target="_blank" rel="noopener">DOI</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section class="block" id="projects">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 04 · Projects</div>
+      <h2>Things I've built</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">Code · Demos</span></div>
+      <div class="main">
+        <div class="projects">
+
+          <div class="project">
+            <div>
+              <h3><a href="https://github.com/namikazi25" target="_blank" rel="noopener">MERIT — reference implementation</a></h3>
+              <p>Open-source reference implementation of the MERIT agentic pipeline: LVLM planner, web-tool executors, and evidence-graph builder with a traceable verdict endpoint.</p>
+              <div class="tags"><span class="tag">python</span><span class="tag">langchain</span><span class="tag">fastapi</span><span class="tag">multi-agent</span></div>
+            </div>
+            <div class="year">2026</div>
+          </div>
+
+          <div class="project">
+            <div>
+              <h3><a href="https://github.com/namikazi25" target="_blank" rel="noopener">Prithvi EO — geospatial service</a></h3>
+              <p>Wrapped IBM/NASA's Prithvi Earth-Observation foundation model as a containerised inference service with self-supervised vision backbones (SimCLR) for downstream climate-adaptation workflows.</p>
+              <div class="tags"><span class="tag">foundation-models</span><span class="tag">geospatial</span><span class="tag">docker</span><span class="tag">aws</span></div>
+            </div>
+            <div class="year">2025</div>
+          </div>
+
+          <div class="project">
+            <div>
+              <h3><a href="https://github.com/namikazi25" target="_blank" rel="noopener">Cross-graph attention GNN</a></h3>
+              <p>PyTorch Geometric implementation of the cross-graph attention network behind the CVPR workshop paper. Includes attention-map visualisations that actually say something about the model's reasoning.</p>
+              <div class="tags"><span class="tag">pytorch-geometric</span><span class="tag">gnn</span><span class="tag">interpretability</span></div>
+            </div>
+            <div class="year">2025</div>
+          </div>
+
+          <div class="project">
+            <div>
+              <h3><a href="https://github.com/namikazi25" target="_blank" rel="noopener">More on GitHub →</a></h3>
+              <p>Notebooks on RAG, LoRA/QLoRA fine-tuning, RLHF/GRPO experiments, and a few interpretability sketches.</p>
+              <div class="tags"><span class="tag">rag</span><span class="tag">lora</span><span class="tag">rlhf</span><span class="tag">grpo</span></div>
+            </div>
+            <div class="year">2023 —</div>
+          </div>
+
         </div>
-    </main>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Mir Nafis Sharear Shopnil. <br>Built with simple HTML/CSS/JS.</p>
+<!-- ============================================================
+     WRITING
+     ============================================================ -->
+<section class="block" id="writing">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 05 · Writing</div>
+      <h2>Essays &amp; notes</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">Medium · Notes</span></div>
+      <div class="main">
+        <div class="writing-list">
+          <div class="writing-item">
+            <span class="when">2024</span>
+            <h3><a href="https://medium.com/@shopnil/understanding-causal-model-induction-in-neural-networks-for-interpretability-480daa76c446" target="_blank" rel="noopener">Understanding Causal Model Induction in Neural Networks for Interpretability</a></h3>
+            <span class="where">Medium</span>
+          </div>
+          <div class="writing-item">
+            <span class="when">2024</span>
+            <h3><a href="https://medium.com/@shopnil/youre-not-a-fraud-beating-imposter-syndrome-in-the-age-of-vibe-coding-501f8faa56bc" target="_blank" rel="noopener">You're Not a Fraud: Beating Imposter Syndrome in the Age of Vibe Coding</a></h3>
+            <span class="where">Medium</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="js/script.js"></script>
+<!-- ============================================================
+     CV SNAPSHOT
+     ============================================================ -->
+<section class="block" id="cv-snapshot">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 06 · Background</div>
+      <h2>CV, at a glance</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside">
+        <span class="meta">Full CV →</span>
+        <div style="margin-top:.4rem;"><a href="cv.html" style="font-family:var(--sans); font-size:.95rem;">Detailed page</a></div>
+        <div style="margin-top:.4rem;"><a href="assets/Mir_N_S_Shopnil_Academic_CV.pdf" target="_blank" style="font-family:var(--sans); font-size:.95rem;">PDF</a></div>
+      </div>
+      <div class="main">
+        <div class="cv-snap">
+
+          <div class="cv-group">
+            <h3>Education</h3>
+            <div class="cv-row">
+              <div>
+                <div class="title">MSc, Artificial Intelligence — <em>Merit (2:1)</em></div>
+                <div class="org">Queen Mary University of London</div>
+              </div>
+              <div class="when">2022 – 2023</div>
+            </div>
+            <div class="cv-row">
+              <div>
+                <div class="title">BSc, Computer Science — <em>VC's List · Dean's List</em></div>
+                <div class="org">BRAC University, Dhaka</div>
+              </div>
+              <div class="when">2017 – 2021</div>
+            </div>
+          </div>
+
+          <div class="cv-group">
+            <h3>Experience</h3>
+            <div class="cv-row">
+              <div>
+                <div class="title">AI Engineer · Lead Architect</div>
+                <div class="org">Technovative Solutions Ltd · Manchester</div>
+              </div>
+              <div class="when">Aug 2025 —</div>
+            </div>
+            <div class="cv-row">
+              <div>
+                <div class="title">Research Fellow</div>
+                <div class="org">Fatima Fellowship (remote)</div>
+              </div>
+              <div class="when">Sep 2024 —</div>
+            </div>
+            <div class="cv-row">
+              <div>
+                <div class="title">Data Scientist</div>
+                <div class="org">Faculty AI · London</div>
+              </div>
+              <div class="when">May – Jul 2024</div>
+            </div>
+          </div>
+
+          <div class="cv-group">
+            <h3>Selected tooling</h3>
+            <p style="font-family:var(--sans); font-size:.95rem; color:var(--ink-2); max-width:60ch;">
+              Python · PyTorch · PyTorch Geometric · LangChain · RAG · LoRA / QLoRA · RLHF / GRPO · Hugging Face · FastAPI · Docker · AWS (EC2/S3) · GCP Vertex AI · W&amp;B.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TEACHING / MENTORSHIP
+     ============================================================ -->
+<section class="block" id="teaching">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 07 · Teaching</div>
+      <h2>Mentorship</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">Ongoing</span></div>
+      <div class="main">
+        <div class="teach-list">
+          <div class="teach-item">
+            <span class="role">Lead · 2025 —</span>
+            <span class="detail"><strong>Mentor to 10 junior engineers</strong> at Technovative. I run weekly research-reading sessions and set architecture roadmaps for each programme track.</span>
+          </div>
+          <div class="teach-item">
+            <span class="role">Peer · 2024 —</span>
+            <span class="detail"><strong>Research peer at Fatima Fellowship</strong> — code reviews, experiment design feedback, and paper sharpening across the cohort.</span>
+          </div>
+          <div class="teach-item">
+            <span class="role">Writing · 2024</span>
+            <span class="detail">Public essays on interpretability and on the psychology of early-career ML work (see <a href="#writing">Writing</a>).</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="block" id="contact">
+  <div class="shell">
+    <div class="contact">
+      <div>
+        <h2>Let's talk.</h2>
+        <p>
+          If you're a professor whose lab aligns with <a href="#research">these questions</a>, or a team hiring for research-engineer work where the research is still real — I'd love to hear from you.
+        </p>
+        <p style="font-family: var(--mono); font-size: .82rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em;">
+          Usually respond within 24h.
+        </p>
+      </div>
+      <div class="contact-info">
+        <div class="ci"><span class="k">Email</span><span class="v"><a href="mailto:sharears4077@gmail.com">sharears4077@gmail.com</a></span></div>
+        <div class="ci"><span class="k">Phone</span><span class="v">+44 7308 009 046</span></div>
+        <div class="ci"><span class="k">Based in</span><span class="v">Manchester, UK</span></div>
+        <div class="ci"><span class="k">Scholar</span><span class="v"><a href="https://scholar.google.com/citations?user=pZ70qSoAAAAJ&hl=en" target="_blank" rel="noopener">pZ70qSoAAAAJ</a></span></div>
+        <div class="ci"><span class="k">GitHub</span><span class="v"><a href="https://github.com/namikazi25" target="_blank" rel="noopener">@namikazi25</a></span></div>
+        <div class="ci"><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/mirnafissharearshopnil/" target="_blank" rel="noopener">/mirnafissharearshopnil</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="shell" style="display: contents;">
+    <div class="shell" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; width: 100%;">
+      <span>© 2026 Mir Nafis Sharear Shopnil</span>
+      <span>Built in HTML &amp; CSS · Manchester</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     TWEAKS PANEL
+     ============================================================ -->
+<div id="tweaks-panel" aria-hidden="true">
+  <div class="hd">
+    <span class="title">Tweaks</span>
+    <button id="tw-close" aria-label="Close">×</button>
+  </div>
+  <div class="body">
+
+    <div class="field">
+      <label>Accent color</label>
+      <div class="swatch-row" data-tweak="accent">
+        <button class="swatch" data-val="forest"  style="background:#1e4d3a" title="Forest"></button>
+        <button class="swatch" data-val="crimson" style="background:#8b1a1a" title="Crimson"></button>
+        <button class="swatch" data-val="navy"    style="background:#2a3f5f" title="Navy"></button>
+        <button class="swatch" data-val="rust"    style="background:#b54816" title="Rust"></button>
+        <button class="swatch" data-val="ink"     style="background:#1a1a1a" title="Ink"></button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Font pairing</label>
+      <div class="opts" data-tweak="fontPair">
+        <button class="opt" data-val="crimson-source">Crimson · Source</button>
+        <button class="opt" data-val="fraunces-inter">Fraunces · Inter</button>
+        <button class="opt" data-val="serif-only">Serif only</button>
+        <button class="opt" data-val="sans-only">Sans only</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Theme</label>
+      <div class="opts" data-tweak="theme">
+        <button class="opt" data-val="light">Light</button>
+        <button class="opt" data-val="dark">Dark</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Hero layout</label>
+      <div class="opts" data-tweak="heroLayout">
+        <button class="opt" data-val="photo-left">Photo left</button>
+        <button class="opt" data-val="photo-right">Photo right</button>
+        <button class="opt" data-val="centered">Centered</button>
+        <button class="opt" data-val="no-photo">No photo</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Density</label>
+      <div class="opts" data-tweak="density">
+        <button class="opt" data-val="airy">Airy</button>
+        <button class="opt" data-val="compact">Compact</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Show sections</label>
+      <div class="toggles">
+        <label class="toggle"><span>Research narrative</span><input type="checkbox" data-toggle="show_research" checked></label>
+        <label class="toggle"><span>Projects</span><input type="checkbox" data-toggle="show_projects" checked></label>
+        <label class="toggle"><span>Writing</span><input type="checkbox" data-toggle="show_writing" checked></label>
+        <label class="toggle"><span>Teaching</span><input type="checkbox" data-toggle="show_teaching" checked></label>
+        <label class="toggle"><span>CV snapshot</span><input type="checkbox" data-toggle="show_cv_snapshot" checked></label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // --- state -----------------------------------------------------
+  const state = Object.assign({}, TWEAK_DEFAULTS);
+
+  function apply() {
+    document.body.setAttribute('data-accent', state.accent);
+    document.body.setAttribute('data-font', state.fontPair);
+    document.body.setAttribute('data-theme', state.theme);
+    document.body.setAttribute('data-density', state.density);
+    const hero = document.getElementById('hero-grid');
+    if (hero) hero.setAttribute('data-layout', state.heroLayout);
+
+    // section toggles
+    const map = {
+      show_research: 'research',
+      show_projects: 'projects',
+      show_writing:  'writing',
+      show_teaching: 'teaching',
+      show_cv_snapshot: 'cv-snapshot'
+    };
+    Object.entries(map).forEach(([k, id]) => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = state[k] ? '' : 'none';
+      const navLink = document.querySelector('.nav-' + id.replace('-', '_').replace('_', ''));
+      // handle a couple of nav link classes
+      const cls = {
+        research: '.nav-research',
+        projects: '.nav-projects',
+        writing:  '.nav-writing'
+      }[id];
+      if (cls) {
+        const n = document.querySelector(cls);
+        if (n) n.style.display = state[k] ? '' : 'none';
+      }
+    });
+
+    // sync UI controls
+    document.querySelectorAll('[data-tweak]').forEach(group => {
+      const key = group.getAttribute('data-tweak');
+      group.querySelectorAll('[data-val]').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-val') === state[key]);
+      });
+    });
+    document.querySelectorAll('[data-toggle]').forEach(cb => {
+      cb.checked = !!state[cb.getAttribute('data-toggle')];
+    });
+  }
+
+  function set(partial) {
+    Object.assign(state, partial);
+    apply();
+    try {
+      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: partial }, '*');
+    } catch (e) {}
+  }
+
+  // --- wire up ---------------------------------------------------
+  document.querySelectorAll('[data-tweak] [data-val]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.closest('[data-tweak]').getAttribute('data-tweak');
+      set({ [key]: btn.getAttribute('data-val') });
+    });
+  });
+  document.querySelectorAll('[data-toggle]').forEach(cb => {
+    cb.addEventListener('change', () => set({ [cb.getAttribute('data-toggle')]: cb.checked }));
+  });
+  document.getElementById('tw-close').addEventListener('click', () => {
+    document.getElementById('tweaks-panel').classList.remove('open');
+  });
+
+  // edit-mode protocol
+  window.addEventListener('message', (ev) => {
+    const d = ev.data || {};
+    if (d.type === '__activate_edit_mode')   document.getElementById('tweaks-panel').classList.add('open');
+    if (d.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').classList.remove('open');
+  });
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+
+  // initial
+  apply();
+
+  // --- reveal on scroll ------------------------------------------
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('section.block, .hero').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+
+  // active nav link on scroll
+  const sections = ['research', 'work', 'projects', 'writing', 'contact']
+    .map(id => document.getElementById(id)).filter(Boolean);
+  const navLinks = Array.from(document.querySelectorAll('nav.top .links a[href^="#"]'));
+  function updateActive() {
+    const y = window.scrollY + 120;
+    let active = null;
+    for (const s of sections) if (s.offsetTop <= y) active = s.id;
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+})();
+</script>
+
 </body>
 </html>
