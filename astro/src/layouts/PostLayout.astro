@@ -1,0 +1,124 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '../styles/blog.css';
+import FormattedDate from '../components/FormattedDate.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  cover?: string;
+  coverAlt?: string;
+  prev?: { slug: string; title: string } | null;
+  next?: { slug: string; title: string } | null;
+}
+
+const { title, description, pubDate, updatedDate, tags = [], cover, coverAlt, prev, next } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <article class="post">
+    <div class="narrow">
+      <header class="post-hero">
+        <a href="/blog" class="back">All posts</a>
+
+        <div class="meta">
+          <span class="when"><FormattedDate date={pubDate} /></span>
+          {updatedDate && <span>Updated <FormattedDate date={updatedDate} /></span>}
+          {tags.map((t) => <span class="tag">{t}</span>)}
+        </div>
+
+        <h1>{title}</h1>
+        <p class="dek">{description}</p>
+
+        {cover ? (
+          <div class="post-cover">
+            <img src={cover} alt={coverAlt ?? ''} />
+          </div>
+        ) : (
+          <div class="post-cover">
+            <div class="cover-placeholder"><span>cover</span></div>
+          </div>
+        )}
+      </header>
+    </div>
+
+    <div class="shell">
+      <div class="post-layout">
+        <div class="post-body" id="post-body">
+          <slot />
+        </div>
+
+        <aside class="post-toc" id="post-toc">
+          <div class="label">Contents</div>
+          <ul id="toc-list"></ul>
+        </aside>
+      </div>
+    </div>
+
+    <div class="narrow">
+      <footer class="post-footer">
+        <div class="share">
+          Share ·
+          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(Astro.url.toString())}`} target="_blank" rel="noopener">Twitter</a>
+          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.toString())}`} target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        {(prev || next) && (
+          <div class="prev-next">
+            {prev ? (
+              <a class="prev" href={`/blog/${prev.slug}`}>
+                <div class="label">← Previous</div>
+                <div class="title">{prev.title}</div>
+              </a>
+            ) : <span />}
+            {next ? (
+              <a class="next" href={`/blog/${next.slug}`}>
+                <div class="label">Next →</div>
+                <div class="title">{next.title}</div>
+              </a>
+            ) : <span />}
+          </div>
+        )}
+      </footer>
+    </div>
+  </article>
+
+  <!-- Optional KaTeX (only loads if page uses $math$) -->
+  <script slot="head" is:inline>
+    if (document.body && /\$\$|\\\(/.test(document.body.textContent || '')) {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
+      document.head.appendChild(l);
+    }
+  </script>
+
+  <script>
+    // Build TOC from h2/h3 in post body
+    const body = document.getElementById('post-body');
+    const toc = document.getElementById('toc-list');
+    if (body && toc) {
+      const headings = body.querySelectorAll('h2, h3');
+      headings.forEach((h) => {
+        if (!h.id) h.id = (h.textContent || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        const li = document.createElement('li');
+        li.className = h.tagName.toLowerCase() === 'h3' ? 'h3' : 'h2';
+        li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
+        toc.appendChild(li);
+      });
+      const links = toc.querySelectorAll('a');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            links.forEach((a) =>
+              a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)
+            );
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      headings.forEach((h) => io.observe(h));
+    }
+  </script>
+</BaseLayout>

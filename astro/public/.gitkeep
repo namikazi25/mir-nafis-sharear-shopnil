@@ -1,0 +1,3 @@
+# Favicons, PDFs, and static images go here.
+# Files placed in this folder are served at the site root.
+# e.g. `public/Mir_CV.pdf` becomes `/Mir_CV.pdf` in the built site.
