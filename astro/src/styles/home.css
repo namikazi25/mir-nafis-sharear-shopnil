@@ -200,10 +200,6 @@ section.block:last-of-type { border-bottom: none; }
   max-width: 62ch;
   color: var(--ink-2);
 }
-.narrative p:first-of-type::first-line {
-  font-variant: small-caps;
-  letter-spacing: 0.04em;
-}
 .narrative .pull {
   font-family: var(--serif);
   font-style: italic;
