@@ -1,125 +1,170 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Mir Nafis Sharear Shopnil</title>
-    <link rel="icon" type="image/png" href="assets/IMG_1635.png">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publications — Mir Nafis Sharear Shopnil</title>
+<meta name="description" content="Papers, preprints, and writing by Mir Nafis Sharear Shopnil on LLM reasoning, multimodal misinformation detection, and interpretability." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231e4d3a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='18' fill='white' font-style='italic'%3EM%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-    <nav>
-        <div class="container nav-wrapper">
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="publications.html" class="active">Publications</a>
-                <a href="cv.html">CV</a>
-            </div>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+<nav class="top">
+  <div class="shell row">
+    <a class="brand" href="index.html">Mir Nafis Sharear Shopnil</a>
+    <div class="links">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="cv.html">CV</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<header class="page-head">
+  <div class="shell">
+    <h1>Publications</h1>
+    <p class="page-sub">Papers and preprints on multimodal misinformation detection, agentic reasoning, and interpretability.</p>
+    <div class="page-actions">
+      <a class="btn-ghost" href="https://scholar.google.com/citations?user=pZ70qSoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="btn-ghost" href="https://arxiv.org/a/shopnil_m_1" target="_blank" rel="noopener">arXiv</a>
+      <a class="btn-ghost" href="index.html">Home</a>
+    </div>
+  </div>
+</header>
+
+<!-- PREPRINTS / UNDER REVIEW -->
+<section class="block" id="preprints">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 01 · Preprints</div>
+      <h2>Under review</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">2026</span></div>
+      <div class="main">
+
+        <article class="paper">
+          <div class="paper-head">
+            <span class="paper-venue">Under review · COLM 2026</span>
+            <span class="paper-year">arXiv · 2510.17590</span>
+          </div>
+          <h3>MERIT: A Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning</h3>
+          <div class="authors"><span class="me">M. N. Sharear Shopnil</span>, S. Duwal, A. Tyagi, A. M. Proma</div>
+          <p class="abstract">
+            An agentic pipeline that orchestrates large vision-language models with web search to build <em>verifiable evidence graphs</em> and traceable rationales before committing to a verdict. The point isn't accuracy — it's that you can read the trace and check the work.
+          </p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2510.17590" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://arxiv.org/pdf/2510.17590" target="_blank" rel="noopener">PDF</a>
+            <a href="#" onclick="navigator.clipboard?.writeText('Shopnil, M. N. S., Duwal, S., Tyagi, A., Proma, A. M. (2026). MERIT: A Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning. arXiv:2510.17590.'); this.textContent='Copied'; setTimeout(()=>this.textContent='Cite', 1200); return false;">Cite</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCE PROCEEDINGS -->
+<section class="block" id="proceedings">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 02 · Conference</div>
+      <h2>Proceedings</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">2021 → 2026</span></div>
+      <div class="main">
+
+        <article class="paper">
+          <div class="paper-head">
+            <span class="paper-venue">Accepted · PP-MisDet @ CVPR 2026</span>
+            <span class="paper-year">arXiv · 2505.18221</span>
+          </div>
+          <h3>Evidence-Grounded Multimodal Misinformation Detection with Attention-Based GNNs</h3>
+          <div class="authors">S. Duwal, <span class="me">M. N. Sharear Shopnil</span>, A. Tyagi, A. M. Proma</div>
+          <p class="abstract">
+            We formalise claims and evidence as separate graphs and score image-text consistency with a <em>cross-graph attention</em> GNN. The attention maps turn out to be interpretable; the accuracy (93.05%) beats the strongest LLM baseline by 2.82 points.
+          </p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2505.18221" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://arxiv.org/pdf/2505.18221" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </article>
+
+        <article class="paper">
+          <div class="paper-head">
+            <span class="paper-venue">IEEE UEMCON · 2021</span>
+            <span class="paper-year">Undergrad thesis work</span>
+          </div>
+          <h3>Demystifying Black-box Learning Models of Rumor Detection from Social Media Posts</h3>
+          <div class="authors">F. Tafannum, <span class="me">M. N. Sharear Shopnil</span>, A. Salsabil, N. Ahmed, et al.</div>
+          <p class="abstract">
+            Applied explainable-AI techniques (LIME, attention attribution) to interpret black-box rumor detection models trained on social media data. The question that started everything: <em>why</em> did the model say that?
+          </p>
+          <div class="paper-links">
+            <a href="https://doi.org/10.1109/UEMCON53757.2021.9666567" target="_blank" rel="noopener">DOI</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL WRITING -->
+<section class="block" id="writing">
+  <div class="shell">
+    <div class="section-head">
+      <div class="num">§ 03 · Writing</div>
+      <h2>Technical writing</h2>
+    </div>
+    <div class="col-body">
+      <div class="aside"><span class="meta">Medium</span></div>
+      <div class="main">
+        <div class="writing-list">
+          <div class="writing-item">
+            <span class="when">2024</span>
+            <h3><a href="https://medium.com/@shopnil/understanding-causal-model-induction-in-neural-networks-for-interpretability-480daa76c446" target="_blank" rel="noopener">Understanding Causal Model Induction in Neural Networks for Interpretability</a></h3>
+            <span class="where">Medium</span>
+          </div>
+          <div class="writing-item">
+            <span class="when">2024</span>
+            <h3><a href="https://medium.com/@shopnil/youre-not-a-fraud-beating-imposter-syndrome-in-the-age-of-vibe-coding-501f8faa56bc" target="_blank" rel="noopener">You're Not a Fraud: Beating Imposter Syndrome in the Age of Vibe Coding</a></h3>
+            <span class="where">Medium</span>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <main>
-        <div class="container">
-            <h1 style="margin-top: 40px;">Publications</h1>
+</main>
 
-            <!-- ACADEMIC LINKS -->
-            <div style="margin-bottom: 40px;">
-                <a href="https://scholar.google.com/citations?user=pZ70qSoAAAAJ&hl=en" target="_blank" class="badge" style="font-size:14px; padding:8px 12px;">🎓 Google Scholar</a>
-                <a href="https://arxiv.org/search/?query=Shopnil&searchtype=all" target="_blank" class="badge" style="font-size:14px; padding:8px 12px;">📜 arXiv</a>
-                <a href="https://orcid.org" target="_blank" class="badge" style="font-size:14px; padding:8px 12px;">🆔 ORCID</a>
-            </div>
+<footer class="site">
+  <div class="shell row">
+    <span>© 2026 Mir Nafis Sharear Shopnil</span>
+    <span>Manchester, UK</span>
+  </div>
+</footer>
 
-            <section>
-                <h2>Preprints & Under Review</h2>
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('section.block, .page-head').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+</script>
 
-                <div class="pub-card">
-                    <h3 class="pub-title">MERIT: Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning</h3>
-                    <p class="pub-authors"><strong>M. N. Sharear Shopnil</strong>, S. Duwal, A. Tyagi, A. M. Proma</p>
-                    <p class="pub-venue" style="margin-top: 5px; color: var(--accent);">Under review at COLM Conference, 2026</p>
-                    
-                    <p class="pub-desc">
-                        Designed an agentic multimodal pipeline that orchestrates multimodal-language models with web searches to build verifiable evidences and traceable rationales for misinformation detection.
-                    </p>
-                    
-                    <div class="pub-links" style="margin-top: 15px;">
-                        <a href="https://arxiv.org/abs/2510.17590" target="_blank"><strong>[arXiv]</strong></a>
-                        <span class="badge" style="margin-left: 10px;">Multi-Agent Systems</span>
-                        <span class="badge">Misinformation</span>
-                    </div>
-                </div>
-
-                <div class="pub-card">
-                    <h3 class="pub-title">Evidence-Grounded Multimodal Misinformation Detection with Attention-Based GNNs</h3>
-                    <p class="pub-authors">S. Duwal, <strong>M. N. Sharear Shopnil</strong>, A. Tyagi, A. M. Proma</p>
-                    <p class="pub-venue" style="margin-top: 5px; color: var(--accent);">Accepted @ PP-MisDet@CVPR2026</p>
-                    
-                    <p class="pub-desc">
-                        Formalized evidence and claim graph representations with cross-graph attention GNN for image-text consistency scoring. Achieved 93.05% accuracy.
-                    </p>
-                    
-                    <div class="pub-links" style="margin-top: 15px;">
-                        <a href="https://arxiv.org/abs/2505.18221" target="_blank"><strong>[arXiv]</strong></a>
-                        <span class="badge" style="margin-left: 10px;">GNN</span>
-                        <span class="badge">Attention</span>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Conference Proceedings</h2>
-
-                <div class="pub-card">
-                    <h3 class="pub-title">Demystifying Black-box Learning Models of Rumor Detection from Social Media Posts</h3>
-                    <p class="pub-authors">F. Tafannum, <strong>M. N. Sharear Shopnil</strong>, A. Salsabil, N. Ahmed, et al.</p>
-                    <p class="pub-venue" style="margin-top: 5px; color: var(--text-main);">IEEE UEMCON, 2021</p>
-                    
-                    <p class="pub-desc">
-                        Applied explainable AI techniques to interpret black-box rumor detection models trained on social media data.
-                    </p>
-                    
-                    <div class="pub-links" style="margin-top: 15px;">
-                        <a href="https://doi.org/10.1109/UEMCON53757.2021.9666567" target="_blank"><strong>[DOI]</strong></a>
-                        <span class="badge" style="margin-left: 10px;">Explainable AI</span>
-                        <span class="badge">NLP</span>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>Technical Writing</h2>
-                
-                <div class="card-grid">
-                    <div class="card">
-                        <h3>You're Not a Fraud: Beating Imposter Syndrome in the Age of Vibe Coding</h3>
-                        <p style="font-style: italic; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Medium, 2024</p>
-                        <a href="https://medium.com/@shopnil/youre-not-a-fraud-beating-imposter-syndrome-in-the-age-of-vibe-coding-501f8faa56bc" target="_blank">Read Article →</a>
-                    </div>
-
-                    <div class="card">
-                        <h3>Understanding Causal Model Induction in Neural Networks</h3>
-                        <p style="font-style: italic; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Medium, 2024</p>
-                        <a href="https://medium.com/@shopnil/understanding-causal-model-induction-in-neural-networks-for-interpretability-480daa76c446" target="_blank">Read Article →</a>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 Mir Nafis Sharear Shopnil</p>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
