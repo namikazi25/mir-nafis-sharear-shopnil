@@ -3,9 +3,9 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // CHANGE THIS to your deployed URL before building for production.
-  // Used for RSS feed + sitemap canonical URLs.
-  site: 'https://mirnafissharearshopnil.com',
+  // GitHub Pages project site. Swap both values if you move to a custom domain.
+  site: 'https://namikazi25.github.io',
+  base: '/mir-nafis-sharear-shopnil',
 
   integrations: [sitemap()],
 

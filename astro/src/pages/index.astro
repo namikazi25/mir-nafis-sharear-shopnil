@@ -69,7 +69,7 @@ const PROJECTS = [
     <header class="hero">
       <div class="shell">
         <div class="hero-grid">
-          <img class="hero-photo" src="/IMG_1635.png" alt="Mir Nafis Sharear Shopnil" />
+          <img class="hero-photo" src={`${import.meta.env.BASE_URL}IMG_1635.png`} alt="Mir Nafis Sharear Shopnil" />
           <div class="hero-text">
             <div class="hero-status">
               <span class="dot"></span>
@@ -85,7 +85,7 @@ const PROJECTS = [
               <a href={SITE.links.scholar} target="_blank" rel="noopener">Scholar</a>
               <a href={SITE.links.github} target="_blank" rel="noopener">GitHub</a>
               <a href={SITE.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
-              <a href="/cv">CV</a>
+              <a href={`${import.meta.env.BASE_URL}cv`}>CV</a>
             </div>
           </div>
         </div>
@@ -163,8 +163,7 @@ const PROJECTS = [
         </div>
         <div class="col-body">
           <div class="aside">
-            <span class="meta">See all →</span>
-            <div style="margin-top:.4rem;"><a href="/publications" style="font-family:var(--sans); font-size:.95rem;">Full publications</a></div>
+            <span class="meta">Papers</span>
           </div>
           <div class="main">
 
@@ -342,7 +341,7 @@ const PROJECTS = [
         <div class="col-body">
           <div class="aside">
             <span class="meta">Blog →</span>
-            <div style="margin-top:.4rem;"><a href="/blog" style="font-family:var(--sans); font-size:.95rem;">All posts</a></div>
+            <div style="margin-top:.4rem;"><a href={`${import.meta.env.BASE_URL}blog`} style="font-family:var(--sans); font-size:.95rem;">All posts</a></div>
           </div>
           <div class="main">
             <div class="writing-list">

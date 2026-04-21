@@ -11,6 +11,8 @@ export interface Props {
 const { title, description = SITE.description, ogImage } = Astro.props;
 const pageTitle = title ? `${title} — ${SITE.title}` : `${SITE.title} — AI Researcher`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL;
+const joinBase = (p: string) => (p.startsWith('/') ? base + p.slice(1) : p);
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -32,7 +34,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231e4d3a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='18' fill='white' font-style='italic'%3EM%3C/text%3E%3C/svg%3E" />
 
   <!-- RSS auto-discovery -->
-  <link rel="alternate" type="application/rss+xml" title={`${SITE.title} — Blog`} href={new URL('/rss.xml', Astro.site)} />
+  <link rel="alternate" type="application/rss+xml" title={`${SITE.title} — Blog`} href={new URL(joinBase('/rss.xml'), Astro.site)} />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,12 +59,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <body>
   <nav class="top">
     <div class="shell row">
-      <a class="brand" href="/">{SITE.title}</a>
+      <a class="brand" href={base}>{SITE.title}</a>
       <div class="links">
         {NAV.map((item) => (
           <a
-            href={item.href}
-            class:list={[{ active: Astro.url.pathname === item.href }]}
+            href={joinBase(item.href)}
+            class:list={[{ active: Astro.url.pathname === joinBase(item.href) }]}
           >
             {item.label}
           </a>

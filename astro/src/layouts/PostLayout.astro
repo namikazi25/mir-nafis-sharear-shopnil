@@ -21,7 +21,7 @@ const { title, description, pubDate, updatedDate, tags = [], cover, coverAlt, pr
   <article class="post">
     <div class="narrow">
       <header class="post-hero">
-        <a href="/blog" class="back">All posts</a>
+        <a href={`${import.meta.env.BASE_URL}blog`} class="back">All posts</a>
 
         <div class="meta">
           <span class="when"><FormattedDate date={pubDate} /></span>
