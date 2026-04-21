@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   // GitHub Pages project site. Swap both values if you move to a custom domain.
   site: 'https://namikazi25.github.io',
-  base: '/mir-nafis-sharear-shopnil',
+  base: '/mir-nafis-sharear-shopnil/',
 
   markdown: {
     shikiConfig: {
