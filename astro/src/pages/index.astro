@@ -1,0 +1,389 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+import '../styles/home.css';
+
+// ---------- Data: edit these in one place ----------
+const NOW = [
+  {
+    when: 'Aug 2025 →',
+    html: `<strong>AI Engineer, Lead Architect</strong> at <span class="place">Technovative Solutions</span> — architecting agentic workflows for EU climate-adaptation programmes (<em>CLIMATEAdaptEOSC</em>, <em>EcoPlast</em>). Operationalising foundation models (Prithvi EO, SimCLR) as containerised services. Mentoring 10 junior engineers.`,
+  },
+  {
+    when: 'Sep 2024 →',
+    html: `<strong>Research Fellow</strong> at <span class="place">Fatima Fellowship</span> — building <em>MERIT</em>, a verifiable multimodal misinformation pipeline. Submitted to COLM 2026; companion GNN paper accepted at PP-MisDet@CVPR 2026.`,
+  },
+  {
+    when: 'Reading',
+    html: `Anthropic's circuit-level interp work, the DeepSeek reasoning reports, and anything that makes <em>tool-use traces auditable</em> rather than impressive.`,
+  },
+  {
+    when: 'Looking for',
+    html: `PhD advisors in <strong>LLM reasoning, mechanistic interpretability, and agentic systems</strong> (CMU · MIT · Stanford · Edinburgh) — and research-engineer roles where the research is still real.`,
+  },
+];
+
+const THREADS = [
+  { n: 'i.',   title: 'Reasoning in LLMs', body: 'Chain-of-thought is convenient but unfaithful. I\'m interested in what counts as actual reasoning inside a forward pass, and how the scratchpad relates to the computation.' },
+  { n: 'ii.',  title: 'Mechanistic interpretability', body: 'Circuits-level methods — SAEs, causal mediation, activation patching — applied to the reasoning traces I care about, not just toy tasks.' },
+  { n: 'iii.', title: 'Agentic reasoning & communication', body: 'What happens when one reasoner delegates to another? Tool-calls as a window into compositional structure; inter-agent communication as a proxy for intermediate representation.' },
+  { n: 'iv.',  title: 'Verifiable evidence', body: 'Outputs are only as good as the rationales they sit on. Structured evidence (graphs, citations, tool traces) is how I keep systems honest.' },
+];
+
+const PROJECTS = [
+  {
+    title: 'MERIT — reference implementation',
+    href: 'https://github.com/namikazi25',
+    body: 'Open-source reference implementation of the MERIT agentic pipeline: LVLM planner, web-tool executors, and evidence-graph builder with a traceable verdict endpoint.',
+    tags: ['python', 'langchain', 'fastapi', 'multi-agent'],
+    year: '2026',
+  },
+  {
+    title: 'Prithvi EO — geospatial service',
+    href: 'https://github.com/namikazi25',
+    body: "Wrapped IBM/NASA's Prithvi Earth-Observation foundation model as a containerised inference service with self-supervised vision backbones (SimCLR) for downstream climate-adaptation workflows.",
+    tags: ['foundation-models', 'geospatial', 'docker', 'aws'],
+    year: '2025',
+  },
+  {
+    title: 'Cross-graph attention GNN',
+    href: 'https://github.com/namikazi25',
+    body: "PyTorch Geometric implementation of the cross-graph attention network behind the CVPR workshop paper. Includes attention-map visualisations that actually say something about the model's reasoning.",
+    tags: ['pytorch-geometric', 'gnn', 'interpretability'],
+    year: '2025',
+  },
+  {
+    title: 'More on GitHub →',
+    href: 'https://github.com/namikazi25',
+    body: 'Notebooks on RAG, LoRA/QLoRA fine-tuning, RLHF/GRPO experiments, and a few interpretability sketches.',
+    tags: ['rag', 'lora', 'rlhf', 'grpo'],
+    year: '2023 —',
+  },
+];
+---
+
+<BaseLayout>
+  <main id="top">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="shell">
+        <div class="hero-grid">
+          <img class="hero-photo" src={`${import.meta.env.BASE_URL}IMG_1635.png`} alt="Mir Nafis Sharear Shopnil" />
+          <div class="hero-text">
+            <div class="hero-status">
+              <span class="dot"></span>
+              Applying for PhD (Fall 2026) · Open to Research Engineer roles
+            </div>
+            <h1>Mir Nafis Sharear&nbsp;Shopnil</h1>
+            <p class="subtitle">AI researcher working on LLM reasoning, mechanistic interpretability, and agentic systems.</p>
+            <p class="hero-lede">
+              I'm an <strong>AI Engineer at Technovative Solutions</strong> (Manchester) and a <strong>Research Fellow at Fatima Fellowship</strong>. My work sits at the intersection of <em>multi-agent reasoning</em>, <em>verifiable evidence</em>, and the tools we use to tell when a model is actually thinking — and when it's just confabulating.
+            </p>
+            <div class="hero-links">
+              <a href={SITE.links.email}>Email</a>
+              <a href={SITE.links.scholar} target="_blank" rel="noopener">Scholar</a>
+              <a href={SITE.links.github} target="_blank" rel="noopener">GitHub</a>
+              <a href={SITE.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+              <a href={`${import.meta.env.BASE_URL}cv`}>CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NOW -->
+    <section class="block" id="now">
+      <div class="shell">
+        <div class="section-head">
+          <div class="num">§ 01 · Currently</div>
+          <h2>What I'm working on</h2>
+        </div>
+        <div class="col-body">
+          <div class="aside"><span class="meta">Updated Apr 2026</span></div>
+          <div class="main">
+            <div class="now-list">
+              {NOW.map((item) => (
+                <div class="now-item">
+                  <span class="when">{item.when}</span>
+                  <span class="what" set:html={item.html} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="block" id="research">
+      <div class="shell">
+        <div class="section-head">
+          <div class="num">§ 02 · Research</div>
+          <h2>A through-line</h2>
+        </div>
+        <div class="col-body">
+          <div class="aside"><span class="meta">2021 → 2026</span></div>
+          <div class="main narrative">
+            <p>
+              I started out in undergrad trying to <em>explain</em> black-box rumour-detection models — why does this LSTM flag a post as a lie? That question has followed me through every project since, and has kept sharpening.
+            </p>
+            <p class="pull">
+              If a model's output can't be audited — traced back to evidence, to a rationale, to a circuit — then for high-stakes work it may as well be a coin flip with confidence.
+            </p>
+            <p>
+              My MSc pushed me toward graph neural networks: structure is a useful prior when you're trying to reason about <em>relations</em> between claims and evidence. At Fatima Fellowship I got to put that into practice — first as a cross-graph GNN, then as an agentic pipeline (MERIT) where LVLMs plan, call web-search tools, and build verifiable evidence graphs before committing to an answer.
+            </p>
+            <p>
+              What I want to do next, in a PhD, is go one level deeper: not just <em>build</em> reasoning systems but <em>understand</em> them. Mechanistic interpretability of multi-step reasoning, especially in agentic settings where one model delegates to tools or to other models. How does reasoning compose? Where does it break? Can we build agents whose chains we can audit the way we audit circuits?
+            </p>
+
+            <div class="threads">
+              {THREADS.map((t) => (
+                <div class="thread">
+                  <div class="thread-num">{t.n}</div>
+                  <div>
+                    <h3>{t.title}</h3>
+                    <p>{t.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAPERS -->
+    <section class="block" id="work">
+      <div class="shell">
+        <div class="section-head">
+          <div class="num">§ 03 · Selected Work</div>
+          <h2>Papers &amp; preprints</h2>
+        </div>
+        <div class="col-body">
+          <div class="aside">
+            <span class="meta">Papers</span>
+          </div>
+          <div class="main">
+
+            <!-- Paper 1: MERIT -->
+            <article class="paper">
+              <div class="paper-head">
+                <span class="paper-venue">Under review · COLM 2026</span>
+                <span class="paper-year">arXiv · 2510.17590</span>
+              </div>
+              <h3>MERIT: A Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning</h3>
+              <div class="authors"><span class="me">M. N. Sharear Shopnil</span>, S. Duwal, A. Tyagi, A. M. Proma</div>
+              <p class="abstract">
+                An agentic pipeline that orchestrates large vision-language models with web search to build <em>verifiable evidence graphs</em> and traceable rationales before committing to a verdict. The point isn't accuracy — it's that you can read the trace and check the work.
+              </p>
+
+              <figure class="figure">
+                <div class="fig-inner">
+                  <svg viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                      <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                        <path d="M0,0 L8,4 L0,8 z" fill="currentColor"/>
+                      </marker>
+                    </defs>
+                    <rect x="20" y="150" width="130" height="60" rx="2" class="diag-box"/>
+                    <text x="85" y="178" text-anchor="middle" class="diag-text">Claim + Image</text>
+                    <text x="85" y="196" text-anchor="middle" class="diag-text">(multimodal)</text>
+
+                    <rect x="200" y="130" width="160" height="100" rx="2" class="diag-box-accent"/>
+                    <text x="280" y="158" text-anchor="middle" class="diag-text-accent">LVLM Planner</text>
+                    <text x="280" y="180" text-anchor="middle" class="diag-text">decompose</text>
+                    <text x="280" y="196" text-anchor="middle" class="diag-text">query plan</text>
+
+                    <rect x="420" y="40" width="150" height="50" rx="2" class="diag-box"/>
+                    <text x="495" y="70" text-anchor="middle" class="diag-text">Web Search</text>
+                    <rect x="420" y="110" width="150" height="50" rx="2" class="diag-box"/>
+                    <text x="495" y="140" text-anchor="middle" class="diag-text">Image Retrieval</text>
+                    <rect x="420" y="180" width="150" height="50" rx="2" class="diag-box"/>
+                    <text x="495" y="210" text-anchor="middle" class="diag-text">Entity Grounding</text>
+                    <rect x="420" y="250" width="150" height="50" rx="2" class="diag-box"/>
+                    <text x="495" y="280" text-anchor="middle" class="diag-text">Fact Check APIs</text>
+
+                    <rect x="620" y="120" width="130" height="120" rx="2" class="diag-box-accent"/>
+                    <text x="685" y="145" text-anchor="middle" class="diag-text-accent">Evidence</text>
+                    <text x="685" y="160" text-anchor="middle" class="diag-text-accent">Graph</text>
+                    <circle cx="650" cy="190" r="5" class="graph-node evidence"/>
+                    <circle cx="685" cy="175" r="5" class="graph-node evidence"/>
+                    <circle cx="720" cy="195" r="5" class="graph-node evidence"/>
+                    <circle cx="660" cy="215" r="5" class="graph-node evidence"/>
+                    <circle cx="705" cy="220" r="5" class="graph-node evidence"/>
+                    <line x1="650" y1="190" x2="685" y2="175" class="graph-edge cross"/>
+                    <line x1="685" y1="175" x2="720" y2="195" class="graph-edge cross"/>
+                    <line x1="650" y1="190" x2="660" y2="215" class="graph-edge cross"/>
+                    <line x1="685" y1="175" x2="705" y2="220" class="graph-edge cross"/>
+                    <line x1="660" y1="215" x2="705" y2="220" class="graph-edge cross"/>
+                    <line x1="720" y1="195" x2="705" y2="220" class="graph-edge cross"/>
+
+                    <rect x="800" y="150" width="80" height="60" rx="2" class="diag-box"/>
+                    <text x="840" y="180" text-anchor="middle" class="diag-text">Verdict</text>
+                    <text x="840" y="196" text-anchor="middle" class="diag-text">+ Rationale</text>
+
+                    <g style="color: var(--ink-2);">
+                      <path class="diag-arrow" d="M150 180 L200 180"/>
+                      <path class="diag-arrow" d="M360 160 L420 80"/>
+                      <path class="diag-arrow" d="M360 170 L420 135"/>
+                      <path class="diag-arrow" d="M360 195 L420 205"/>
+                      <path class="diag-arrow" d="M360 210 L420 275"/>
+                      <path class="diag-arrow" d="M570 65 L620 150"/>
+                      <path class="diag-arrow" d="M570 135 L620 165"/>
+                      <path class="diag-arrow" d="M570 205 L620 200"/>
+                      <path class="diag-arrow" d="M570 275 L620 220"/>
+                      <path class="diag-arrow" d="M750 180 L800 180"/>
+                    </g>
+
+                    <text x="190" y="60" class="diag-label">fig. 1 — MERIT pipeline</text>
+                    <text x="190" y="330" class="diag-label">claim → plan → tools → evidence graph → audited verdict</text>
+                  </svg>
+                </div>
+                <figcaption>
+                  <span>Fig. 1 — MERIT pipeline overview</span>
+                  <span>Shopnil et al., 2026</span>
+                </figcaption>
+              </figure>
+
+              <div style="margin-top: .75rem;">
+                <div class="metric"><span class="val">Verifiable</span><span class="key">evidence trace</span></div>
+                <div class="metric"><span class="val">Modular</span><span class="key">tool interface</span></div>
+              </div>
+
+              <div class="paper-links">
+                <a href="https://arxiv.org/abs/2510.17590" target="_blank" rel="noopener">arXiv</a>
+                <a href="https://arxiv.org/pdf/2510.17590" target="_blank" rel="noopener">PDF</a>
+              </div>
+            </article>
+
+            <!-- Paper 2: GNN -->
+            <article class="paper">
+              <div class="paper-head">
+                <span class="paper-venue">Accepted · PP-MisDet @ CVPR 2026</span>
+                <span class="paper-year">arXiv · 2505.18221</span>
+              </div>
+              <h3>Evidence-Grounded Multimodal Misinformation Detection with Attention-Based GNNs</h3>
+              <div class="authors">S. Duwal, <span class="me">M. N. Sharear Shopnil</span>, A. Tyagi, A. M. Proma</div>
+              <p class="abstract">
+                We formalise claims and evidence as separate graphs and score image-text consistency with a <em>cross-graph attention</em> GNN. The attention maps turn out to be interpretable; the accuracy (93.05%) beats the strongest LLM baseline by 2.82 points.
+              </p>
+
+              <div style="margin-top: .75rem;">
+                <div class="metric"><span class="val">93.05%</span><span class="key">accuracy</span></div>
+                <div class="metric"><span class="val">+2.82</span><span class="key">pts vs LLM SOTA</span></div>
+              </div>
+
+              <div class="paper-links">
+                <a href="https://arxiv.org/abs/2505.18221" target="_blank" rel="noopener">arXiv</a>
+                <a href="https://arxiv.org/pdf/2505.18221" target="_blank" rel="noopener">PDF</a>
+              </div>
+            </article>
+
+            <!-- Paper 3: Rumor Detection -->
+            <article class="paper">
+              <div class="paper-head">
+                <span class="paper-venue">IEEE UEMCON · 2021</span>
+                <span class="paper-year">Undergrad thesis work</span>
+              </div>
+              <h3>Demystifying Black-box Learning Models of Rumor Detection from Social Media Posts</h3>
+              <div class="authors">F. Tafannum, <span class="me">M. N. Sharear Shopnil</span>, A. Salsabil, N. Ahmed, et al.</div>
+              <p class="abstract">
+                Applied explainable-AI techniques (LIME, attention attribution) to interpret black-box rumor detection models trained on social media data. The question that started everything: <em>why</em> did the model say that?
+              </p>
+              <div class="paper-links">
+                <a href="https://doi.org/10.1109/UEMCON53757.2021.9666567" target="_blank" rel="noopener">DOI</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="block" id="projects">
+      <div class="shell">
+        <div class="section-head">
+          <div class="num">§ 04 · Projects</div>
+          <h2>Things I've built</h2>
+        </div>
+        <div class="col-body">
+          <div class="aside"><span class="meta">Code · Demos</span></div>
+          <div class="main">
+            <div class="projects">
+              {PROJECTS.map((p) => (
+                <div class="project">
+                  <div>
+                    <h3><a href={p.href} target="_blank" rel="noopener">{p.title}</a></h3>
+                    <p>{p.body}</p>
+                    <div class="tags">
+                      {p.tags.map((tag) => <span class="tag">{tag}</span>)}
+                    </div>
+                  </div>
+                  <div class="year">{p.year}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section class="block" id="writing">
+      <div class="shell">
+        <div class="section-head">
+          <div class="num">§ 05 · Writing</div>
+          <h2>Essays &amp; notes</h2>
+        </div>
+        <div class="col-body">
+          <div class="aside">
+            <span class="meta">Blog →</span>
+            <div style="margin-top:.4rem;"><a href={`${import.meta.env.BASE_URL}blog`} style="font-family:var(--sans); font-size:.95rem;">All posts</a></div>
+          </div>
+          <div class="main">
+            <div class="writing-list">
+              <div class="writing-item">
+                <span class="when">2024</span>
+                <h3><a href="https://medium.com/@shopnil/understanding-causal-model-induction-in-neural-networks-for-interpretability-480daa76c446" target="_blank" rel="noopener">Understanding Causal Model Induction in Neural Networks for Interpretability</a></h3>
+                <span class="where">Medium</span>
+              </div>
+              <div class="writing-item">
+                <span class="when">2024</span>
+                <h3><a href="https://medium.com/@shopnil/youre-not-a-fraud-beating-imposter-syndrome-in-the-age-of-vibe-coding-501f8faa56bc" target="_blank" rel="noopener">You're Not a Fraud: Beating Imposter Syndrome in the Age of Vibe Coding</a></h3>
+                <span class="where">Medium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="block" id="contact">
+      <div class="shell">
+        <div class="contact">
+          <div>
+            <h2>Let's talk.</h2>
+            <p>
+              If you're a professor whose lab aligns with <a href="#research">these questions</a>, or a team hiring for research-engineer work where the research is still real — I'd love to hear from you.
+            </p>
+            <p style="font-family: var(--mono); font-size: .82rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em;">
+              Usually respond within 24h.
+            </p>
+          </div>
+          <div class="contact-info">
+            <div class="ci"><span class="k">Email</span><span class="v"><a href={SITE.links.email}>{SITE.email}</a></span></div>
+            <div class="ci"><span class="k">Based in</span><span class="v">{SITE.location}</span></div>
+            <div class="ci"><span class="k">Scholar</span><span class="v"><a href={SITE.links.scholar} target="_blank" rel="noopener">pZ70qSoAAAAJ</a></span></div>
+            <div class="ci"><span class="k">GitHub</span><span class="v"><a href={SITE.links.github} target="_blank" rel="noopener">@namikazi25</a></span></div>
+            <div class="ci"><span class="k">LinkedIn</span><span class="v"><a href={SITE.links.linkedin} target="_blank" rel="noopener">/mirnafissharearshopnil</a></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

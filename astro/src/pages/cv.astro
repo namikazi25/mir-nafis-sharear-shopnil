@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/home.css';
+---
+
+<BaseLayout title="CV" description="Curriculum vitae — Mir Nafis Sharear Shopnil">
+  <main>
+    <section class="block" id="cv-snapshot">
+      <div class="shell">
+        <div class="section-head">
+          <div class="num">§ CV</div>
+          <h2>Curriculum Vitae</h2>
+        </div>
+        <div class="col-body">
+          <div class="aside">
+            <span class="meta">PDF →</span>
+            <div style="margin-top:.4rem;"><a href={`${import.meta.env.BASE_URL}Mir_N_S_Shopnil_Academic_CV.pdf`} target="_blank" style="font-family:var(--sans); font-size:.95rem;">Download</a></div>
+          </div>
+          <div class="main">
+            <div class="cv-snap">
+              <div class="cv-group">
+                <h3>Education</h3>
+                <div class="cv-row">
+                  <div>
+                    <div class="title">MSc, Artificial Intelligence — <em>Merit (2:1)</em></div>
+                    <div class="org">Queen Mary University of London</div>
+                  </div>
+                  <div class="when">2022 – 2023</div>
+                </div>
+                <div class="cv-row">
+                  <div>
+                    <div class="title">BSc, Computer Science — <em>VC's List · Dean's List</em></div>
+                    <div class="org">BRAC University, Dhaka</div>
+                  </div>
+                  <div class="when">2017 – 2021</div>
+                </div>
+              </div>
+
+              <div class="cv-group">
+                <h3>Experience</h3>
+                <div class="cv-row">
+                  <div>
+                    <div class="title">AI Engineer · Lead Architect</div>
+                    <div class="org">Technovative Solutions Ltd · Manchester</div>
+                  </div>
+                  <div class="when">Aug 2025 —</div>
+                </div>
+                <div class="cv-row">
+                  <div>
+                    <div class="title">Research Fellow</div>
+                    <div class="org">Fatima Fellowship (remote)</div>
+                  </div>
+                  <div class="when">Sep 2024 —</div>
+                </div>
+                <div class="cv-row">
+                  <div>
+                    <div class="title">Data Scientist</div>
+                    <div class="org">Faculty AI · London</div>
+                  </div>
+                  <div class="when">May – Jul 2024</div>
+                </div>
+              </div>
+
+              <div class="cv-group">
+                <h3>Selected tooling</h3>
+                <p style="font-family:var(--sans); font-size:.95rem; color:var(--ink-2); max-width:60ch;">
+                  Python · PyTorch · PyTorch Geometric · LangChain · RAG · LoRA / QLoRA · RLHF / GRPO · Hugging Face · FastAPI · Docker · AWS (EC2/S3) · GCP Vertex AI · W&amp;B.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

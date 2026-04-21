@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/blog.css';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+
+const isDev = import.meta.env.DEV;
+const all = await getCollection('posts', ({ data }) => isDev || !data.draft);
+const posts = all.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+// reading time estimate
+function readingTime(text: string) {
+  const words = text.split(/\s+/).length;
+  return Math.max(1, Math.round(words / 220));
+}
+
+// unique tags
+const tagSet = new Set<string>();
+posts.forEach((p) => p.data.tags.forEach((t) => tagSet.add(t)));
+const tags = Array.from(tagSet).sort();
+---
+
+<BaseLayout title="Blog" description="Notes on LLM reasoning, mechanistic interpretability, agentic systems, and the research process.">
+  <main>
+    <div class="shell">
+      <header class="blog-header">
+        <div class="meta">§ Blog · {posts.length} post{posts.length === 1 ? '' : 's'}</div>
+        <h1>Notes &amp; essays.</h1>
+        <p>
+          Rough thinking on LLM reasoning, mechanistic interpretability, agentic systems, and the research process — in roughly that order of interest.
+        </p>
+      </header>
+
+      <div class="blog-tools">
+        <span class="label">Filter by tag</span>
+        <div class="tag-filter" id="tag-filter">
+          <button class="tag-chip active" data-tag="*">all</button>
+          {tags.map((t) => <button class="tag-chip" data-tag={t}>{t}</button>)}
+        </div>
+        <a class="rss-link" href={`${import.meta.env.BASE_URL}rss.xml`}>RSS</a>
+      </div>
+
+      <div class="posts-list" id="posts-list">
+        {posts.length === 0 && <div class="empty-state">No posts yet — the first one is being written.</div>}
+
+        {posts.map((post) => (
+          <article
+            class:list={['post-entry', { draft: post.data.draft }]}
+            data-tags={post.data.tags.join(' ')}
+          >
+            <div class="date"><FormattedDate date={post.data.pubDate} /></div>
+            <div>
+              <h2><a href={`${import.meta.env.BASE_URL}blog/${post.slug}`}>{post.data.title}</a></h2>
+              <p class="dek">{post.data.description}</p>
+              <div class="post-meta">
+                {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+              </div>
+            </div>
+            <div class="reading">{readingTime(post.body)} min</div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const chips = document.querySelectorAll<HTMLButtonElement>('.tag-chip');
+    const entries = document.querySelectorAll<HTMLElement>('.post-entry');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const tag = chip.dataset.tag;
+        chips.forEach((c) => c.classList.toggle('active', c === chip));
+        entries.forEach((e) => {
+          const tags = (e.dataset.tags || '').split(' ');
+          e.style.display = tag === '*' || tags.includes(tag!) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</BaseLayout>
