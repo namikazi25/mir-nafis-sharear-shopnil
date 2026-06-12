@@ -10,7 +10,7 @@ backend:
   # auth_endpoint: auth
 
 media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+public_folder: "/mir-nafis-sharear-shopnil/assets/uploads"
 
 collections:
   - name: "posts"

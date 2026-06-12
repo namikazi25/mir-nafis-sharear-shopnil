@@ -1,26 +1,26 @@
 # Blogging with Jekyll and Decap CMS
 
-This repository now has a minimal Jekyll blog layered on top of the existing portfolio pages. The homepage, CV, publications page, images, and existing CSS are preserved; the new blog workflow adds Markdown posts in `_posts/` and a browser editor at `/admin/`.
+This repository now has a minimal Jekyll blog layered on top of the existing portfolio pages. The homepage, CV, publications page, images, and existing CSS are preserved; the new blog workflow adds Markdown posts in `_posts/` and a browser editor at `/admin/` (served as `/mir-nafis-sharear-shopnil/admin/` on GitHub Pages).
 
 ## Current site structure
 
 - The root site is static HTML/CSS, now with Jekyll layouts for the blog.
 - Blog posts are Markdown files in `_posts/`.
-- The blog index is `blog.md` and is served at `/blog/`.
+- The blog index is `blog.md` and is served at `/blog/` (or `/mir-nafis-sharear-shopnil/blog/` on GitHub Pages).
 - Individual post pages use `_layouts/post.html`.
-- The Decap CMS admin UI lives in `admin/index.html` and is served at `/admin/`.
+- The Decap CMS admin UI lives in `admin/index.html` and is served at `/admin/` locally without a base URL, or `/mir-nafis-sharear-shopnil/admin/` on GitHub Pages.
 - Decap CMS configuration lives in `admin/config.yml`.
 - The GitHub repository configured for Decap CMS is `namikazi25/mir-nafis-sharear-shopnil`.
 
 ## How to open the browser editor
 
-1. Visit `https://YOUR_SITE_DOMAIN/admin/`.
+1. Visit `https://namikazi25.github.io/mir-nafis-sharear-shopnil/admin/`.
 2. Log in with GitHub through Decap CMS.
 3. Click **New Blog Post**.
 4. Write in Markdown or rich text.
 5. Click **Publish**.
 
-Published posts are committed to `_posts/` as Markdown files. Jekyll then rebuilds the site and the post appears on `/blog/` automatically.
+Published posts are committed to `_posts/` as Markdown files. Jekyll then rebuilds the site and the post appears on `/mir-nafis-sharear-shopnil/blog/` automatically on GitHub Pages.
 
 ## If GitHub login says `api.netlify.com/auth?... not found`
 
@@ -34,7 +34,7 @@ https://api.netlify.com/auth?provider=github&site_id=namikazi25.github.io&scope=
 
 That URL returns **not found** because `namikazi25.github.io` is a GitHub Pages site, not a Netlify site registered with Netlify's OAuth provider. A static GitHub Pages site cannot safely store the GitHub OAuth client secret that Decap needs to exchange a GitHub login code for an access token.
 
-To make `/admin/` publishing work on GitHub Pages, add one of the authentication options below.
+To make `/mir-nafis-sharear-shopnil/admin/` publishing work on GitHub Pages, add one of the authentication options below.
 
 ## Recommended fix for GitHub Pages: add a Decap GitHub OAuth proxy
 
@@ -43,7 +43,7 @@ For a GitHub Pages site, keep the site hosted on GitHub Pages and deploy a tiny 
 High-level steps:
 
 1. Create a GitHub OAuth App in GitHub developer settings.
-2. Set the OAuth app **Homepage URL** to your live site URL, for example `https://namikazi25.github.io/`.
+2. Set the OAuth app **Homepage URL** to your live project site URL: `https://namikazi25.github.io/mir-nafis-sharear-shopnil/`.
 3. Deploy a Decap-compatible OAuth proxy.
 4. Set the OAuth app **Authorization callback URL** to the proxy callback URL, usually:
 
@@ -63,7 +63,7 @@ High-level steps:
      auth_endpoint: auth
    ```
 
-7. Commit and deploy that change, then return to `/admin/` and log in again.
+7. Commit and deploy that change, then return to `/mir-nafis-sharear-shopnil/admin/` and log in again.
 
 Decap expects the proxy to provide these endpoints:
 
@@ -134,9 +134,11 @@ bundle exec jekyll serve
 
 Then open:
 
-- Homepage: `http://127.0.0.1:4000/`
-- Blog: `http://127.0.0.1:4000/blog/`
-- Sample post: `http://127.0.0.1:4000/blog/2026/06/12/example-post/`
-- Admin UI: `http://127.0.0.1:4000/admin/`
+- Homepage: `http://127.0.0.1:4000/mir-nafis-sharear-shopnil/`
+- Blog: `http://127.0.0.1:4000/mir-nafis-sharear-shopnil/blog/`
+- Sample post: `http://127.0.0.1:4000/mir-nafis-sharear-shopnil/blog/2026/06/12/example-post/`
+- Admin UI: `http://127.0.0.1:4000/mir-nafis-sharear-shopnil/admin/`
+
+Because `_config.yml` sets `baseurl: "/mir-nafis-sharear-shopnil"` for GitHub Pages project hosting, local URLs include that same project path. If you want root-local URLs during development, run `bundle exec jekyll serve --baseurl ""` and then use `http://127.0.0.1:4000/admin/`.
 
 Local Decap CMS can load the editor, but GitHub publishing still depends on the OAuth setup described above.
