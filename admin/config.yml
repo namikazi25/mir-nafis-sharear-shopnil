@@ -1,0 +1,32 @@
+# This uses Decap CMS's GitHub backend. On a GitHub Pages-only site,
+# Decap cannot complete GitHub OAuth through the default Netlify auth URL.
+# If login opens https://api.netlify.com/auth?... and says "not found",
+# deploy a Decap-compatible GitHub OAuth proxy and uncomment base_url below.
+backend:
+  name: github
+  repo: namikazi25/mir-nafis-sharear-shopnil
+  branch: main
+  # base_url: https://YOUR_DECAP_OAUTH_PROXY_DOMAIN
+  # auth_endpoint: auth
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }

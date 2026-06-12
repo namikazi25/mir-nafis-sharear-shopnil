@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Decap CMS GitHub Auth Setup</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+
+    code,
+    pre {
+      background: #f6f8fa;
+      border-radius: 0.35rem;
+    }
+
+    code {
+      padding: 0.1rem 0.25rem;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="/admin/">← Back to admin</a></p>
+    <h1>Decap CMS GitHub login setup</h1>
+    <p>
+      If Decap login opens <code>https://api.netlify.com/auth?provider=github&amp;site_id=namikazi25.github.io&amp;scope=repo</code>
+      and says <strong>not found</strong>, Decap has loaded, but GitHub OAuth is not configured for this GitHub Pages site yet.
+    </p>
+    <p>
+      A static GitHub Pages site cannot store a GitHub OAuth client secret. To publish from Decap CMS while staying on GitHub Pages,
+      deploy a Decap-compatible GitHub OAuth proxy and point <code>admin/config.yml</code> at it.
+    </p>
+    <h2>Required config after deploying a proxy</h2>
+    <pre><code>backend:
+  name: github
+  repo: namikazi25/mir-nafis-sharear-shopnil
+  branch: main
+  base_url: https://YOUR_DECAP_OAUTH_PROXY_DOMAIN
+  auth_endpoint: auth</code></pre>
+    <h2>OAuth app settings</h2>
+    <ul>
+      <li>Homepage URL: <code>https://namikazi25.github.io/</code></li>
+      <li>Authorization callback URL: <code>https://YOUR_DECAP_OAUTH_PROXY_DOMAIN/callback</code></li>
+    </ul>
+    <p>
+      More complete instructions are in
+      <a href="https://github.com/namikazi25/mir-nafis-sharear-shopnil/blob/main/README-blogging.md">README-blogging.md</a>.
+    </p>
+  </main>
+</body>
+</html>

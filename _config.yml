@@ -1,0 +1,25 @@
+title: "Mir Nafis Sharear Shopnil"
+description: "AI researcher working on LLM reasoning, mechanistic interpretability, and agentic systems."
+url: ""
+baseurl: ""
+lang: "en"
+timezone: "Etc/UTC"
+
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+
+exclude:
+  - astro
+  - README-blogging.md
+  - Gemfile
+  - Gemfile.lock

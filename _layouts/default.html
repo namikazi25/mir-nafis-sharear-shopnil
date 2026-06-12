@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231e4d3a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='18' fill='white' font-style='italic'%3EM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
+</head>
+<body data-theme="light">
+  <nav class="top">
+    <div class="shell row">
+      <a class="brand" href="{{ '/' | relative_url }}">Mir Nafis Sharear Shopnil</a>
+      <div class="links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} class="active"{% endif %}>Blog</a>
+        <a href="{{ '/cv.html' | relative_url }}">CV</a>
+        <a href="{{ '/publications.html' | relative_url }}">Publications</a>
+        <a href="https://github.com/namikazi25" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mirnafissharearshopnil/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    {{ content }}
+  </main>
+
+  <footer class="site">
+    <div class="shell">© {{ 'now' | date: '%Y' }} Mir Nafis Sharear Shopnil · <a href="{{ '/admin/' | relative_url }}">Admin</a></div>
+  </footer>
+</body>
+</html>
