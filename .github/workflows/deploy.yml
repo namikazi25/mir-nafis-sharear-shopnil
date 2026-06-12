@@ -1,6 +1,5 @@
-# Build the Astro site under astro/ and deploy it to GitHub Pages.
-# Replaces the previous static.yml workflow that uploaded the raw repo root.
-name: Deploy Astro site to Pages
+# Build the Jekyll site at the repository root and deploy it to GitHub Pages.
+name: Deploy Jekyll site to Pages
 
 on:
   push:
@@ -12,7 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment; queue subsequent runs.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -25,12 +23,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          path: ./astro
-          node-version: 20
-          package-manager: npm@latest
+          ruby-version: '3.3'
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
 
   deploy:
     name: Deploy
