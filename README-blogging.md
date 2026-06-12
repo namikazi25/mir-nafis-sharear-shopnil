@@ -99,6 +99,36 @@ published: true
 The post body below the front matter is normal Markdown.
 
 ## Current Decap backend configuration
+## Authentication reality check
+
+Decap CMS can load from `/admin/` with only the files in this repository, but publishing to GitHub requires an OAuth authentication flow. If login does not work, configure one of these supported GitHub authentication options:
+
+### Option A: Netlify Identity / Git Gateway
+
+This is common for Decap CMS, but it requires hosting through Netlify or adding Netlify Identity to the site. If you continue using GitHub Pages only, this is usually not the simplest path.
+
+### Option B: GitHub OAuth proxy for Decap CMS
+
+For a GitHub Pages site, you need a small OAuth proxy service because static GitHub Pages cannot keep a GitHub OAuth client secret by itself.
+
+High-level steps:
+
+1. Create a GitHub OAuth App in GitHub developer settings.
+2. Set the homepage URL to your live site URL.
+3. Set the authorization callback URL to the callback URL required by your chosen Decap CMS GitHub OAuth proxy.
+4. Deploy or use a trusted OAuth proxy that supports Decap CMS GitHub backend authentication.
+5. Configure the proxy with your GitHub OAuth app client ID and client secret.
+6. If your proxy requires it, add its URL to `admin/config.yml` under the `backend` block, for example:
+
+   ```yaml
+   backend:
+     name: github
+     repo: namikazi25/mir-nafis-sharear-shopnil
+     branch: main
+     base_url: https://YOUR_AUTH_PROXY_DOMAIN
+   ```
+
+7. Return to `/admin/` and log in with GitHub.
 
 The Decap CMS backend currently points at:
 
