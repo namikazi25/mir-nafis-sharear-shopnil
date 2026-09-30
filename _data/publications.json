@@ -1,0 +1,158 @@
+[
+  {
+    "id": "dialogue-games",
+    "year": 2026,
+    "title": "Investigating Knowledge Transfer Across Interactive Dialogue Games",
+    "authors": [
+      "Filippo Momentè",
+      "Mir Nafis Sharear Shopnil",
+      "Andrea de Varda",
+      "Pavel Merinov",
+      "Raffaella Bernardi",
+      "Oswald Lanz",
+      "Alessandro Suglia",
+      "Alessandro Torcinovich"
+    ],
+    "note": "Joint first authorship: Filippo Momentè and Mir Nafis Sharear Shopnil.",
+    "venue": "arXiv:2608.23969 · Preprint · August 2026",
+    "url": "https://arxiv.org/abs/2608.23969",
+    "summary": "Studies transfer between dialogue games through fine-tuning, task-transfer graphs, and task vectors.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2608.23969"
+      },
+      {
+        "label": "PDF",
+        "url": "https://arxiv.org/pdf/2608.23969"
+      }
+    ]
+  },
+  {
+    "id": "evidence-grounded-gnn",
+    "year": 2026,
+    "title": "Evidence-Grounded Multimodal Misinformation Detection with Attention-Based GNNs",
+    "authors": [
+      "Sharad Duwal",
+      "Mir Nafis Sharear Shopnil",
+      "Abhishek Tyagi",
+      "Adiba Mahbub Proma"
+    ],
+    "venue": "IEEE/CVF CVPR Workshops (PP-MisDet), 2026, pp. 10994–11003",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026W/PPMisDet/html/Duwal_Evidence-Grounded_Multimodal_Misinformation_Detection_with_Attention-Based_GNNs_CVPRW_2026_paper.html",
+    "summary": "Evidence-grounded prompting and graph-based comparison of claims and evidence for multimodal misinformation detection.",
+    "links": [
+      {
+        "label": "Proceedings",
+        "url": "https://openaccess.thecvf.com/content/CVPR2026W/PPMisDet/html/Duwal_Evidence-Grounded_Multimodal_Misinformation_Detection_with_Attention-Based_GNNs_CVPRW_2026_paper.html"
+      },
+      {
+        "label": "PDF",
+        "url": "https://openaccess.thecvf.com/content/CVPR2026W/PPMisDet/papers/Duwal_Evidence-Grounded_Multimodal_Misinformation_Detection_with_Attention-Based_GNNs_CVPRW_2026_paper.pdf"
+      }
+    ]
+  },
+  {
+    "id": "merit",
+    "year": 2025,
+    "title": "MERIT: Modular Framework for Multimodal Misinformation Detection with Web-Grounded Reasoning",
+    "authors": [
+      "Mir Nafis Sharear Shopnil",
+      "Sharad Duwal",
+      "Abhishek Tyagi",
+      "Adiba Mahbub Proma"
+    ],
+    "venue": "arXiv:2510.17590 · Preprint · 2025, revised April 2026",
+    "url": "https://arxiv.org/abs/2510.17590",
+    "summary": "A four-module framework for multimodal misinformation detection with web-grounded verification and citation-linked rationales.",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2510.17590"
+      },
+      {
+        "label": "PDF",
+        "url": "https://arxiv.org/pdf/2510.17590"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/namikazi25/MERIT-A-Modular-Framework-for-Multimodal-Misinformation-Detection-with-Web-Grounded-Reasoning"
+      }
+    ]
+  },
+  {
+    "id": "ecohack-2025",
+    "year": 2025,
+    "title": "Reflections from the 2025 EcoHack: AI & LLM Hackathon for Applications in Evidence-based Ecological Research & Practice",
+    "authors": [
+      "Jennifer D’Souza",
+      "Tarek Al Mustafa",
+      "Daphne Frederike Auer",
+      "Sarah T. Bachinger",
+      "Marc Brinner",
+      "Caren Daniel",
+      "Nayanika Das",
+      "Alexander Espig",
+      "Nadeen Fathallah",
+      "Edward Gow-Smith",
+      "Lorenz Gunreben",
+      "Nico Heider",
+      "Hrishikesh Jadhav",
+      "Basma Jalloul",
+      "Vamsi Krishna Kommineni",
+      "Samira Korani",
+      "Andrii Krutsylo",
+      "Zijian Ling",
+      "Vaishnavi Mendu",
+      "Shuhan Miao",
+      "Bartolome Ortiz Viso",
+      "Anne Peter",
+      "Moritz Plenz",
+      "Javad Razavian",
+      "Moiz Khan Sherwani",
+      "Mir Nafis Sharear Shopnil",
+      "Will Woof",
+      "Birgitta Koenig-Ries",
+      "Tina Heger"
+    ],
+    "venue": "EcoEvoRxiv · Preprint · April 2025 · Not peer reviewed",
+    "url": "https://ecoevorxiv.org/repository/view/8910/",
+    "summary": "A collaborative report on eleven hackathon team projects exploring AI and large language models for ecological research and practice.",
+    "links": [
+      {
+        "label": "EcoEvoRxiv",
+        "url": "https://ecoevorxiv.org/repository/view/8910/"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.32942/X2XP7J"
+      },
+      {
+        "label": "PDF",
+        "url": "https://ecoevorxiv.org/repository/object/8910/download/16656/"
+      }
+    ]
+  },
+  {
+    "id": "rumor-detection",
+    "year": 2021,
+    "title": "Demystifying Black-box Learning Models of Rumor Detection from Social Media Posts",
+    "authors": [
+      "Faiza Tafannum",
+      "Mir Nafis Sharear Shopnil",
+      "Anika Salsabil",
+      "Navid Ahmed",
+      "Md. Golam Rabiul Alam",
+      "Md Tanzim Reza"
+    ],
+    "venue": "IEEE UEMCON, 2021, pp. 358–364",
+    "url": "https://doi.org/10.1109/UEMCON53757.2021.9666567",
+    "summary": "Explainable-AI methods for interpreting rumor-detection models trained on social media posts.",
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1109/UEMCON53757.2021.9666567"
+      }
+    ]
+  }
+]

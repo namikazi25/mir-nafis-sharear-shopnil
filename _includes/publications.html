@@ -1,0 +1,12 @@
+<ol class="publication-list">
+{% for paper in site.data.publications %}
+  <li id="{{ paper.id }}">
+    <p class="publication-title"><a href="{{ paper.url | escape }}">{{ paper.title | escape }}</a></p>
+    <p class="authors">{% if paper.authors.size > 10 %}{{ paper.authors | first | escape }} et al., including <strong>Mir Nafis Sharear Shopnil</strong>{% else %}{% for author in paper.authors %}{% if author == 'Mir Nafis Sharear Shopnil' %}<strong>{{ author | escape }}</strong>{% else %}{{ author | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}</p>
+    <p class="detail">{{ paper.venue | escape }}</p>
+    {% if paper.note %}<p class="detail">{{ paper.note | escape }}</p>{% endif %}
+    {% if include.summaries %}<p>{{ paper.summary | escape }}</p>{% endif %}
+    <p class="paper-links">{% for link in paper.links %}<a href="{{ link.url | escape }}">{{ link.label | escape }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+  </li>
+{% endfor %}
+</ol>

@@ -13,7 +13,8 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  # Only the latest site revision should deploy; cancel superseded queued runs.
+  cancel-in-progress: true
 
 jobs:
   build:

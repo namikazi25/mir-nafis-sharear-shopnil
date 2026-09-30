@@ -1,6 +1,10 @@
+## Shared site content
+
+The live Jekyll pages use `_layouts/default.html` and `css/styles.css`. Publication metadata lives in `_data/publications.json` and renders through `_includes/publications.html` on the homepage, publication page, and CV. Keep one entry per distinct work; use MERIT as the current title. Existing page URLs and historical section anchors are preserved.
+
 ## Writing hub
 
-`/blog/` is the unified Writing page. Curated external articles live in `_data/writing.yml`; native posts remain in `_posts/`. Use the topic tags `Engineering`, `Research`, and `Notes`. Keep original article URLs and publication dates; use `date_label: Updated` when only an update date is known. The homepage reads the same external-article data.
+`/blog/` is the unified Writing page. Curated external articles live in `_data/writing.yml`; native posts remain in `_posts/`. Use the topic tags `Engineering`, `Research`, and `Notes`. Keep original article URLs and publication dates; use `date_label: Updated` when only an update date is known. The homepage and Writing page read the same article data. The site uses a restrained shared layout and a simple chronological list; topic tags remain as text metadata.
 
 Draft posts with `published: false`. The sample post is intentionally unpublished. Review locally with `bundle exec jekyll serve`; only an approved commit to `main` publishes via GitHub Pages. The browser editor still requires the OAuth setup below.
 

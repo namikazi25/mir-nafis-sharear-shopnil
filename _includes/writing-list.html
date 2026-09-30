@@ -1,0 +1,12 @@
+{% assign entries = site.posts | concat: site.data.writing | sort: 'date' | reverse %}
+<ul class="writing-list" id="writing-list">
+{% for post in entries %}
+  <li>
+    <a href="{% if post.external %}{{ post.url | escape }}{% else %}{{ post.url | relative_url }}{% endif %}">{{ post.title | escape }}</a>
+    <div class="detail">{% if post.date_label %}{{ post.date_label }} {% endif %}{{ post.date | date: '%B %-d, %Y' }} · {{ post.source | default: 'On this site' }}{% if post.tags.size > 0 %} · {{ post.tags | join: ', ' | escape }}{% endif %}</div>
+    {% if include.descriptions and post.description %}<p>{{ post.description | escape }}</p>{% endif %}
+  </li>
+{% else %}
+  <li>No posts yet.</li>
+{% endfor %}
+</ul>
