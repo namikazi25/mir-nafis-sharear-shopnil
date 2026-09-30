@@ -1,3 +1,5 @@
+> Legacy implementation: this directory is excluded from the current Jekyll build. The live GitHub Pages site is built from the repository root using `.github/workflows/deploy.yml`. See `../README-blogging.md`.
+
 # Personal site — Astro
 
 Mir Nafis Sharear Shopnil's personal site, migrated from static HTML to [Astro](https://astro.build/). Posts are Markdown, RSS + sitemap are generated at build time, and the design language is identical to the HTML version.

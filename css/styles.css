@@ -590,3 +590,14 @@ section[id] { scroll-margin-top: 80px; }
   text-transform: uppercase;
   letter-spacing: .04em;
 }
+
+/* Unified writing hub: readable without JavaScript; progressive topic filtering. */
+[hidden] { display: none !important; }
+.writing-filters { display: flex; flex-wrap: wrap; gap: .65rem; margin-bottom: 1rem; }
+.writing-filters button { font: inherit; padding: .45rem .9rem; border: 1px solid var(--rule); border-radius: var(--radius); color: var(--ink); background: var(--surface); cursor: pointer; }
+.writing-filters button[aria-pressed="true"] { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+.writing-filters button:focus-visible, .post-card a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.post-featured { border-top: 3px solid var(--accent); }
+.post-card .post-read { margin-top: .9rem; font-size: .95rem; }
+.post-card h2, .page-sub { overflow-wrap: anywhere; }
+@media (max-width: 780px) { nav.top .row { flex-wrap: wrap; gap: .6rem; } nav .links { flex-wrap: wrap; gap: .5rem 1rem; } }

@@ -3,7 +3,7 @@ title: "Example Post: My New Blog Workflow"
 date: 2026-06-12
 description: "A short test post for the new Jekyll and Decap CMS blog workflow."
 tags: [blogging, markdown]
-published: true
+published: false
 ---
 
 This is an example post for the new blog workflow.

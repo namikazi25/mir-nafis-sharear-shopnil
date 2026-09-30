@@ -1,3 +1,9 @@
+## Writing hub
+
+`/blog/` is the unified Writing page. Curated external articles live in `_data/writing.yml`; native posts remain in `_posts/`. Use the topic tags `Engineering`, `Research`, and `Notes`. Keep original article URLs and publication dates; use `date_label: Updated` when only an update date is known. The homepage reads the same external-article data.
+
+Draft posts with `published: false`. The sample post is intentionally unpublished. Review locally with `bundle exec jekyll serve`; only an approved commit to `main` publishes via GitHub Pages. The browser editor still requires the OAuth setup below.
+
 # Blogging with Jekyll and Decap CMS
 
 This repository now has a minimal Jekyll blog layered on top of the existing portfolio pages. The homepage, CV, publications page, images, and existing CSS are preserved; the new blog workflow adds Markdown posts in `_posts/` and a browser editor at `/admin/` (served as `/mir-nafis-sharear-shopnil/admin/` on GitHub Pages).

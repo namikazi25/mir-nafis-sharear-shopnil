@@ -1,0 +1,23 @@
+- title: "How I Got Qwen3.8-27B from 18.66 to 192.40 tok/s on One L40S"
+  date: 2026-08-31T00:00:00Z
+  date_label: "Updated"
+  tags: [Engineering]
+  source: Hashnode
+  external: true
+  featured: true
+  url: https://namikazi25.hashnode.dev/how-i-got-qwen3-8-27b-from-18-66-to-192-40-tok-s-on-one-l40s
+  description: "A practical account of quantization, kernel selection, speculative decoding, and deploying a faster inference service. The headline compares the complete deployment changes in a controlled single-request benchmark, not end-to-end agent speed."
+- title: "You're Not a Fraud: Beating Imposter Syndrome in the Age of Vibe Coding"
+  date: 2025-05-29T00:00:00Z
+  tags: [Notes]
+  source: Medium
+  external: true
+  url: https://medium.com/@shopnil/youre-not-a-fraud-beating-imposter-syndrome-in-the-age-of-vibe-coding-501f8faa56bc
+  description: "Reflections on learning, confidence, and building with AI-assisted coding tools."
+- title: "Understanding Causal Model Induction in Neural Networks for Interpretability"
+  date: 2024-10-13T00:00:00Z
+  tags: [Research]
+  source: Medium
+  external: true
+  url: https://medium.com/@shopnil/understanding-causal-model-induction-in-neural-networks-for-interpretability-480daa76c446
+  description: "A walkthrough of causal model induction and interchange intervention training for understanding neural networks."
